@@ -1,0 +1,32 @@
+/* TeachEase — variables de marca
+   Listas para usar en la app web: @import "marca/tokens/tokens.css"; */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  /* Color */
+  --te-azul-aula: #0C1A5E;
+  --te-turquesa-voz: #3FBFB0;
+  --te-azul-idea: #3E5BE8;
+  --te-violeta-impulso: #5B34EE;
+  --te-lavanda-calma: #A9AEE3;
+  --te-nube: #F3F5FB;
+  --te-gris-pizarra: #5C6386;
+  --te-blanco: #FFFFFF;
+
+  /* Degradado de marca */
+  --te-degradado: linear-gradient(90deg, #3FBFB0 0%, #3E5BE8 55%, #5B34EE 100%);
+
+  /* Tipografía */
+  --te-fuente: "Poppins", Arial, Helvetica, sans-serif;
+  --te-peso-regular: 400;
+  --te-peso-medium: 500;
+  --te-peso-semibold: 600;
+  --te-peso-bold: 700;
+
+  /* Radios */
+  --te-radio-sm: 8px;
+  --te-radio-md: 14px;
+  --te-radio-lg: 24px;
+  --te-radio-pill: 999px;
+}

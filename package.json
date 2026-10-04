@@ -1,0 +1,16 @@
+{
+  "name": "teachease",
+  "version": "0.1.0",
+  "private": true,
+  "description": "TeachEase — tu apoyo silencioso en el aula. Manual de marca y futura app web.",
+  "scripts": {
+    "logos": "node marca/scripts/generar-logos.js",
+    "png": "node marca/scripts/exportar.js png",
+    "pdf": "node marca/scripts/exportar.js pdf",
+    "build": "npm run logos && npm run png && npm run pdf"
+  },
+  "devDependencies": {
+    "opentype.js": "^1.3.4",
+    "playwright": "^1.56.0"
+  }
+}

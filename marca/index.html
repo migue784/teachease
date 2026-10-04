@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TeachEase · Manual de marca</title>
+<meta name="description" content="Manual de identidad visual de TeachEase: logo, isotipo, color, tipografía y aplicaciones.">
+<link rel="icon" href="assets/logo/isotipo-compacto.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:Poppins;font-weight:300;src:url(assets/fuentes/Poppins-Light.ttf) format("truetype")}
+@font-face{font-family:Poppins;font-weight:400;src:url(assets/fuentes/Poppins-Regular.ttf) format("truetype")}
+@font-face{font-family:Poppins;font-weight:500;src:url(assets/fuentes/Poppins-Medium.ttf) format("truetype")}
+@font-face{font-family:Poppins;font-weight:600;src:url(assets/fuentes/Poppins-SemiBold.ttf) format("truetype")}
+@font-face{font-family:Poppins;font-weight:700;src:url(assets/fuentes/Poppins-Bold.ttf) format("truetype")}
+
+:root{
+  --azul:#0C1A5E; --turquesa:#3FBFB0; --idea:#3E5BE8; --violeta:#5B34EE;
+  --lavanda:#A9AEE3; --nube:#F3F5FB; --pizarra:#5C6386; --blanco:#FFFFFF;
+  --linea:#E3E6F2;
+  --degradado:linear-gradient(90deg,#3FBFB0 0%,#3E5BE8 55%,#5B34EE 100%);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#E7E9F3}
+body{font-family:Poppins,Arial,sans-serif;color:var(--azul);-webkit-font-smoothing:antialiased;padding:40px 0;display:flex;flex-direction:column;align-items:center;gap:36px}
+img{display:block;max-width:100%}
+
+/* ---------- Página ---------- */
+.pag{width:1280px;height:800px;background:var(--blanco);position:relative;overflow:hidden;padding:64px 88px;display:flex;flex-direction:column;box-shadow:0 18px 50px -20px rgba(12,26,94,.25);border-radius:4px}
+.pag.oscura{background:var(--azul);color:var(--blanco)}
+.pag.nube{background:var(--nube)}
+.cab{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end;margin-bottom:40px}
+.cab.sola{grid-template-columns:1fr}
+.num{font-size:15px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--violeta);margin-bottom:10px}
+.oscura .num{color:#8E74FF}
+h2{font-size:44px;line-height:1.08;font-weight:600;letter-spacing:-.02em}
+.lead{font-size:16px;line-height:1.65;color:var(--pizarra)}
+.oscura .lead{color:#C9CDEA}
+h3{font-size:19px;font-weight:600;margin-bottom:6px}
+p{font-size:14.5px;line-height:1.65;color:var(--pizarra)}
+.oscura p{color:#C9CDEA}
+.peq{font-size:12.5px;color:var(--pizarra);line-height:1.5}
+.oscura .peq{color:#AEB3DA}
+.tarjeta{background:var(--nube);border-radius:20px;padding:28px}
+.oscura .tarjeta{background:rgba(255,255,255,.06)}
+.etq{display:inline-block;font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--pizarra)}
+.grad-txt{background:var(--degradado);-webkit-background-clip:text;background-clip:text;color:transparent}
+.fila{display:flex;gap:24px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.crece{flex:1;min-height:0}
+
+/* ---------- Portada ---------- */
+.portada{padding:0;display:grid;grid-template-columns:1.05fr 1fr}
+.portada .izq{padding:72px 88px;display:flex;flex-direction:column;justify-content:space-between}
+.portada .der{background:var(--nube);display:flex;align-items:center;justify-content:center;position:relative}
+.portada .der img{width:430px}
+.portada h1{font-size:64px;line-height:1.02;font-weight:600;letter-spacing:-.03em}
+.portada .sub{font-size:18px;color:#C9CDEA;margin-top:22px;max-width:420px;line-height:1.6}
+.anillo{position:absolute;border-radius:50%;border:2px solid var(--linea)}
+
+/* ---------- Índice ---------- */
+.indice{columns:2;column-gap:72px;margin-top:8px}
+.indice li{list-style:none;display:flex;gap:22px;align-items:baseline;padding:15px 0;border-bottom:1px solid var(--linea);break-inside:avoid}
+.indice b{font-size:14px;font-weight:600;color:var(--violeta);width:28px}
+.indice span{font-size:19px;font-weight:500}
+
+/* ---------- Bloques reutilizables ---------- */
+.cita{font-size:30px;line-height:1.35;font-weight:500;letter-spacing:-.01em}
+.cita em{font-style:normal}
+.rasgo{display:flex;flex-direction:column;gap:10px}
+.icono{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:var(--blanco)}
+.icono svg{width:26px;height:26px}
+.nube .icono{background:var(--blanco)}
+.si,.no{border-radius:18px;padding:22px 24px}
+.si{background:#E7F7F4}
+.no{background:#F6F0FF}
+.si .etq{color:#1F8A7D}.no .etq{color:var(--violeta)}
+.si p,.no p{color:var(--azul);font-size:15px;margin-top:8px}
+
+/* Lienzo para mostrar logos */
+.lienzo{border-radius:20px;display:flex;align-items:center;justify-content:center;position:relative}
+.lienzo.claro{background:var(--nube)}
+.lienzo.blanco{background:var(--blanco);border:1px solid var(--linea)}
+.lienzo.azul{background:var(--azul)}
+.lienzo.grad{background:linear-gradient(135deg,#3FBFB0,#3E5BE8 55%,#5B34EE)}
+.lienzo.violeta{background:var(--violeta)}
+.lienzo.turq{background:var(--turquesa)}
+.lienzo.foto{background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><rect width='40' height='40' fill='%23CFD3EA'/><circle cx='20' cy='20' r='9' fill='%23B9BEE0'/></svg>")}
+.pie-lienzo{margin-top:12px}
+
+/* Anatomía */
+.anat{position:relative;width:100%;height:100%}
+.anat img{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);height:470px;max-width:none}
+.cota{position:absolute;display:flex;align-items:center;gap:12px;font-size:13px;font-weight:600}
+.cota i{display:block;height:1px;background:var(--violeta);width:70px}
+.cota.der{flex-direction:row-reverse}
+.cota em{font-style:normal;font-weight:400;color:var(--pizarra);display:block;font-size:12px}
+.punto{width:9px;height:9px;border-radius:50%;background:var(--violeta);flex:none}
+
+/* Partes del isotipo */
+.partes{display:grid;grid-template-columns:1fr 1fr;gap:16px 32px}
+.parte{display:flex;gap:16px;align-items:flex-start}
+.parte .n{width:30px;height:30px;border-radius:50%;background:var(--azul);color:#fff;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;flex:none;margin-top:2px}
+.parte h3{font-size:16px;margin-bottom:2px}
+.parte p{font-size:13.5px;line-height:1.55}
+
+/* Área de protección */
+.proteccion{position:relative;padding:var(--x);border:1.5px dashed var(--violeta);border-radius:6px}
+.proteccion .x{position:absolute;font-size:12px;font-weight:600;color:var(--violeta);display:flex;align-items:center;justify-content:center}
+.medida{display:flex;align-items:flex-end;gap:28px}
+.medida div{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+
+/* Usos incorrectos */
+.mal{position:relative}
+.mal .lienzo{height:150px;overflow:hidden}
+.mal .marca-x{position:absolute;top:10px;right:10px;width:26px;height:26px;border-radius:50%;background:#E5484D;display:flex;align-items:center;justify-content:center}
+.mal p{font-size:13px;margin-top:10px;color:var(--azul);font-weight:500}
+
+/* Color */
+.muestra{border-radius:20px;overflow:hidden;display:flex;flex-direction:column;background:var(--blanco);border:1px solid var(--linea)}
+.muestra .c{flex:1}
+.muestra .d{padding:16px 18px}
+.muestra h3{font-size:16px;margin:0}
+.muestra code{font-family:Poppins,Arial,sans-serif;font-size:12px;color:var(--pizarra);display:block;line-height:1.7}
+.proporcion{display:flex;height:56px;border-radius:14px;overflow:hidden}
+.proporcion div{display:flex;align-items:flex-end;padding:8px 12px;font-size:12px;font-weight:600}
+
+/* Contraste */
+.combo{border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;justify-content:space-between;height:128px}
+.combo b{font-size:22px;font-weight:600}
+.combo span{font-size:12px;font-weight:500;display:flex;justify-content:space-between}
+
+/* Tipografía */
+.especimen{font-size:150px;line-height:.9;font-weight:600;letter-spacing:-.04em}
+.pesos div{display:flex;justify-content:space-between;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--linea)}
+.pesos span{font-size:24px}
+.pesos small{font-size:12.5px;color:var(--pizarra)}
+.jerarquia>div{display:grid;grid-template-columns:150px 1fr;align-items:baseline;gap:20px;padding:12px 0;border-bottom:1px solid var(--linea)}
+.jerarquia small{font-size:12px;color:var(--pizarra);line-height:1.5}
+
+/* Mockups */
+.telefono{width:250px;height:510px;border-radius:40px;background:#111733;padding:12px;box-shadow:0 30px 60px -25px rgba(12,26,94,.5)}
+.pantalla{width:100%;height:100%;border-radius:30px;overflow:hidden;background:linear-gradient(160deg,#16246F,#0C1A5E 55%,#2A1F7C);padding:44px 14px 20px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px 6px;align-content:start}
+.app{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:9.5px;color:#fff}
+.app i{width:40px;height:40px;border-radius:11px;background:rgba(255,255,255,.14);display:block}
+.app img{width:40px;height:40px}
+.navegador{border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 30px 60px -30px rgba(12,26,94,.45);border:1px solid var(--linea)}
+.barra{height:34px;background:#EEF0F7;display:flex;align-items:center;gap:7px;padding:0 14px}
+.barra i{width:10px;height:10px;border-radius:50%;background:#D3D7E8}
+.barra span{margin-left:14px;font-size:11px;color:var(--pizarra);background:#fff;border-radius:999px;padding:3px 14px}
+.web-nav{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;border-bottom:1px solid var(--linea)}
+.web-nav nav{display:flex;gap:26px;font-size:13px;font-weight:500;color:var(--pizarra)}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;font-weight:600;font-size:13px;padding:10px 20px}
+.btn.prim{background:var(--violeta);color:#fff}
+.btn.sec{background:var(--nube);color:var(--azul)}
+.web-hero{display:grid;grid-template-columns:1.2fr 1fr;gap:20px;padding:34px 32px 36px;align-items:center}
+.web-hero h4{font-size:34px;line-height:1.12;font-weight:600;letter-spacing:-.02em}
+.chat{background:var(--nube);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.burb{font-size:12px;line-height:1.5;padding:10px 13px;border-radius:14px;max-width:88%}
+.burb.bot{background:#fff;color:var(--azul);border-bottom-left-radius:4px}
+.burb.yo{background:var(--violeta);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+
+.tarjeta-pres{width:340px;height:200px;border-radius:14px;box-shadow:0 24px 50px -24px rgba(12,26,94,.45);position:relative;overflow:hidden}
+.diapo{border-radius:14px;overflow:hidden;aspect-ratio:16/9;box-shadow:0 24px 50px -24px rgba(12,26,94,.45);position:relative}
+.perfil{border-radius:18px;background:#fff;box-shadow:0 24px 50px -24px rgba(12,26,94,.35);overflow:hidden;border:1px solid var(--linea)}
+
+/* Descargas */
+.archivos{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 28px}
+.archivos a{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.14);color:#fff;text-decoration:none;font-size:13.5px}
+.archivos a small{color:#AEB3DA;font-size:11.5px}
+
+@media print{
+  html,body{background:none;padding:0;gap:0;display:block}
+  .pag{box-shadow:none;border-radius:0;break-after:page;page-break-after:always}
+  .grad-txt{background:none;color:var(--violeta)}
+  .oscura .grad-txt{color:#5FD8C8}
+  @page{size:1280px 800px;margin:0}
+}
+
+/* Pantallas pequeñas: las páginas fluyen */
+@media screen and (max-width:1320px){
+  body{padding:0;gap:0}
+  .pag{width:100%;height:auto;min-height:0;padding:48px 20px;border-radius:0;box-shadow:none;border-bottom:1px solid var(--linea)}
+  .cab,.g2,.g3,.g4,.portada,.partes,.archivos{grid-template-columns:1fr !important}
+  .fila{flex-direction:column}
+  .indice{columns:1}
+  .portada .izq{padding:48px 20px;gap:40px}
+  .portada .der{padding:40px 20px}
+  .portada .der img{width:80%}
+  .portada h1{font-size:44px}
+  h2{font-size:32px}
+  .especimen{font-size:96px}
+  .cita{font-size:21px !important}
+  .anat{height:auto}
+  .anat img{position:static;transform:none;height:auto;width:100%}
+  .cota{display:none}
+  .web-hero{grid-template-columns:1fr}
+  .telefono{margin:0 auto}
+  .lienzo{min-height:160px}
+  [style*="height:"]{height:auto !important}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================ PORTADA ============================ -->
+<section class="pag oscura portada">
+  <div class="izq">
+    <img src="assets/logo/logo-horizontal-sin-eslogan-negativo.svg" alt="TeachEase" style="height:62px;width:auto">
+    <div>
+      <h1>Manual de<br>identidad de<br><span class="grad-txt">marca</span></h1>
+      <p class="sub">Cómo se ve, cómo se escribe y cómo se usa TeachEase, para que cada pieza hable con la misma voz.</p>
+    </div>
+    <p class="peq">Versión 1.0 · 2026</p>
+  </div>
+  <div class="der">
+    <div class="anillo" style="width:560px;height:560px"></div>
+    <div class="anillo" style="width:720px;height:720px"></div>
+    <img src="assets/logo/logo-vertical.svg" alt="Logo de TeachEase" style="position:relative">
+  </div>
+</section>
+
+<!-- ============================ ÍNDICE ============================ -->
+<section class="pag">
+  <div class="cab sola"><div><p class="num">Contenido</p><h2>Índice</h2></div></div>
+  <ol class="indice">
+    <li><b>01</b><span>La marca</span></li>
+    <li><b>02</b><span>Personalidad y voz</span></li>
+    <li><b>03</b><span>El logo</span></li>
+    <li><b>04</b><span>El isotipo y su significado</span></li>
+    <li><b>05</b><span>Isotipo separado</span></li>
+    <li><b>06</b><span>Versiones del logo</span></li>
+    <li><b>07</b><span>Positivo, negativo y una tinta</span></li>
+    <li><b>08</b><span>Área de protección y tamaño mínimo</span></li>
+    <li><b>09</b><span>Usos incorrectos</span></li>
+    <li><b>10</b><span>Paleta de color</span></li>
+    <li><b>11</b><span>Combinaciones y contraste</span></li>
+    <li><b>12</b><span>Tipografía</span></li>
+    <li><b>13</b><span>Elementos gráficos</span></li>
+    <li><b>14</b><span>Aplicaciones digitales</span></li>
+    <li><b>15</b><span>Aplicaciones impresas y redes</span></li>
+    <li><b>16</b><span>Archivos y equipo</span></li>
+  </ol>
+</section>
+
+<!-- ============================ 01 LA MARCA ============================ -->
+<section class="pag">
+  <div class="cab">
+    <div><p class="num">01 · La marca</p><h2>Un aliado para quien enseña idiomas</h2></div>
+    <p class="lead">TeachEase es una plataforma educativa con inteligencia artificial pensada para docentes y auxiliares educativos que necesitan aprender y fortalecer una segunda lengua de forma práctica, flexible e interactiva.</p>
+  </div>
+  <div class="g2 crece" style="grid-template-columns:1.25fr 1fr">
+    <div class="tarjeta" style="display:flex;flex-direction:column;justify-content:space-between;background:var(--azul);color:#fff">
+      <svg width="44" height="34" viewBox="0 0 44 34" aria-hidden="true"><path d="M0 34V20Q0 5 16 0l2 5Q9 9 9 17h9v17zm26 0V20q0-15 16-20l2 5q-9 4-9 12h9v17z" fill="#3FBFB0"/></svg>
+      <p class="cita" style="color:#fff;font-size:27px">TeachEase es más que un asistente virtual: es un aliado educativo que acompaña silenciosamente a las personas, para que <em style="color:#5FD8C8">enseñar deje de ser un miedo</em> y se convierta en una oportunidad de crecimiento.</p>
+      <p class="peq" style="color:#AEB3DA">Declaración de marca</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div class="tarjeta" style="flex:1;padding:22px 26px">
+        <p class="etq">El problema</p>
+        <p style="margin-top:8px;color:var(--azul);font-size:15px">Muchos docentes y auxiliares deben enseñar una segunda lengua sin contar con la formación necesaria, y eso limita su desempeño y sus oportunidades laborales.</p>
+      </div>
+      <div class="tarjeta" style="flex:1">
+        <p class="etq">Lo que hacemos</p>
+        <p style="margin-top:8px;color:var(--azul);font-size:15px">Actividades interactivas, apoyo virtual y recursos pedagógicos accesibles, con horarios flexibles y aprendizaje que se adapta a cada persona.</p>
+      </div>
+      <div class="tarjeta" style="flex:1">
+        <p class="etq">Para quién</p>
+        <p style="margin-top:8px;color:var(--azul);font-size:15px">Docentes, auxiliares educativos e instituciones que quieren fortalecer el aprendizaje de una segunda lengua.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 02 PERSONALIDAD ============================ -->
+<section class="pag nube">
+  <div class="cab">
+    <div><p class="num">02 · Personalidad y voz</p><h2>Hablamos como un buen compañero de aula</h2></div>
+    <p class="lead">TeachEase no corrige desde arriba ni presume de tecnología. Está al lado, en silencio, y aparece cuando hace falta. Así es la marca y así debe sonar en cada mensaje.</p>
+  </div>
+  <div class="g4" style="margin-bottom:34px">
+    <div class="rasgo"><div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="#3FBFB0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg></div><h3>Cercana</h3><p>Tutea, saluda y usa palabras sencillas. Nunca suena a manual técnico.</p></div>
+    <div class="rasgo"><div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="#3E5BE8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Paciente</h3><p>Cada persona va a su ritmo. Explica las veces que sea necesario, sin juzgar.</p></div>
+    <div class="rasgo"><div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="#5B34EE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1v-6h3zM3 19a2 2 0 0 0 2 2h1v-6H3z"/></svg></div><h3>Discreta</h3><p>Es un apoyo silencioso: acompaña sin robar protagonismo al docente.</p></div>
+    <div class="rasgo"><div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="#0C1A5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></div><h3>Innovadora</h3><p>Usa inteligencia artificial para facilitar, no para complicar.</p></div>
+  </div>
+  <div class="g2 crece">
+    <div class="si"><span class="etq">Así sí</span><p>“Vamos paso a paso. Hoy practicamos los saludos en inglés que vas a usar mañana con tu grupo.”</p><p>“Casi lo tienes. Fíjate en la pronunciación de la <b>th</b> y lo intentamos otra vez.”</p></div>
+    <div class="no"><span class="etq">Así no</span><p>“Respuesta incorrecta. Intente nuevamente.”</p><p>“Nuestro algoritmo de IA de última generación optimiza su proceso de adquisición lingüística.”</p></div>
+  </div>
+</section>
+
+<!-- ============================ 03 EL LOGO ============================ -->
+<section class="pag">
+  <div class="cab">
+    <div><p class="num">03 · El logo</p><h2>Tres piezas que trabajan juntas</h2></div>
+    <p class="lead">El logo principal une el isotipo (el robot), el logotipo (el nombre) y el eslogan. Es la versión preferida y la que se usa siempre que haya espacio suficiente.</p>
+  </div>
+  <div class="crece lienzo claro" style="position:relative">
+    <div class="anat">
+      <img src="assets/logo/logo-vertical.svg" alt="Logo principal de TeachEase" style="height:440px">
+      <div class="cota" style="left:200px;top:120px"><div><span>Isotipo</span><em>El asistente TeachEase</em></div><i></i><span class="punto"></span></div>
+      <div class="cota der" style="right:96px;top:330px"><div><span>Logotipo</span><em>Poppins SemiBold</em></div><i></i><span class="punto"></span></div>
+      <div class="cota" style="left:130px;top:452px"><div><span>Eslogan</span><em>Poppins Medium</em></div><i></i><span class="punto"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 04 SIGNIFICADO ============================ -->
+<section class="pag">
+  <div class="cab">
+    <div><p class="num">04 · El isotipo</p><h2>Cada parte cuenta lo que hacemos</h2></div>
+    <p class="lead">El isotipo es un asistente amable con audífonos que guía al docente. Ningún elemento es decorativo: todos explican una parte de la propuesta.</p>
+  </div>
+  <div class="g2 crece" style="grid-template-columns:420px 1fr;gap:56px;align-items:center">
+    <div class="lienzo claro" style="height:100%">
+      <img src="assets/logo/isotipo.svg" alt="Isotipo de TeachEase" style="width:330px">
+    </div>
+    <div class="partes">
+      <div class="parte"><span class="n">1</span><div><h3>El asistente</h3><p>Una cara amable en una pantalla. Representa la inteligencia artificial con un lado humano.</p></div></div>
+      <div class="parte"><span class="n">2</span><div><h3>El guiño y la sonrisa</h3><p>Complicidad y confianza: “tranquilo, yo te acompaño”.</p></div></div>
+      <div class="parte"><span class="n">3</span><div><h3>Audífonos y micrófono</h3><p>Escuchar y hablar, la base para aprender una segunda lengua.</p></div></div>
+      <div class="parte"><span class="n">4</span><div><h3>Forma de punto de ubicación</h3><p>“Estás aquí”: la plataforma ubica a cada persona y la lleva a su ritmo.</p></div></div>
+      <div class="parte"><span class="n">5</span><div><h3>Burbuja de diálogo</h3><p>La conversación como forma de aprender, con un apoyo siempre disponible.</p></div></div>
+      <div class="parte"><span class="n">6</span><div><h3>Libro abierto</h3><p>Los recursos pedagógicos y la formación sobre la que se apoya todo.</p></div></div>
+      <div class="parte"><span class="n">7</span><div><h3>Arco de acompañamiento</h3><p>Rodea al asistente como un abrazo. Pasa del turquesa al violeta: del apoyo al crecimiento.</p></div></div>
+      <div class="parte"><span class="n">8</span><div><h3>Chispas</h3><p>El momento en que algo se entiende y se enciende la confianza.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 05 ISOTIPO SEPARADO ============================ -->
+<section class="pag nube">
+  <div class="cab">
+    <div><p class="num">05 · Isotipo separado</p><h2>El robot también trabaja solo</h2></div>
+    <p class="lead">Cuando el espacio es pequeño o la marca ya se reconoce, el isotipo puede ir sin el nombre. Hay tres niveles de detalle según el tamaño.</p>
+  </div>
+  <div class="g3 crece">
+    <div style="display:flex;flex-direction:column">
+      <div class="lienzo blanco crece"><img src="assets/logo/isotipo.svg" alt="Isotipo completo" style="width:230px"></div>
+      <div class="pie-lienzo"><h3>Isotipo completo</h3><p>Con arco, burbuja, chispas y libro. Para portadas, piezas grandes y presentaciones. Desde 120 px o 30 mm.</p></div>
+    </div>
+    <div style="display:flex;flex-direction:column">
+      <div class="lienzo blanco crece"><img src="assets/logo/isotipo-compacto.svg" alt="Isotipo compacto" style="width:150px"></div>
+      <div class="pie-lienzo"><h3>Isotipo compacto</h3><p>Solo el asistente. Para favicon, botones, marcas de agua y tamaños pequeños. Funciona desde 16 px.</p></div>
+    </div>
+    <div style="display:flex;flex-direction:column">
+      <div class="lienzo blanco crece" style="gap:18px">
+        <img src="assets/logo/app-icono.svg" alt="Ícono de app en degradado" style="width:120px">
+        <img src="assets/logo/app-icono-azul.svg" alt="Ícono de app en azul" style="width:120px">
+      </div>
+      <div class="pie-lienzo"><h3>Ícono de aplicación</h3><p>El isotipo compacto dentro de un cuadro redondeado. Para la app web, la pantalla del celular y los avatares de redes.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 06 VERSIONES ============================ -->
+<section class="pag">
+  <div class="cab">
+    <div><p class="num">06 · Versiones del logo</p><h2>Una versión para cada formato</h2></div>
+    <p class="lead">Elige la versión según el espacio disponible. La vertical es la principal; la horizontal funciona mejor en encabezados y espacios alargados.</p>
+  </div>
+  <div class="crece" style="display:grid;grid-template-columns:1fr 1.35fr;grid-template-rows:1fr 1fr;gap:22px">
+    <div style="grid-row:span 2;display:flex;flex-direction:column">
+      <div class="lienzo claro crece"><img src="assets/logo/logo-vertical.svg" alt="Logo vertical" style="width:300px"></div>
+      <div class="pie-lienzo fila" style="justify-content:space-between;align-items:baseline"><h3>Vertical · principal</h3><span class="peq">Portadas, afiches, redes</span></div>
+    </div>
+    <div style="display:flex;flex-direction:column">
+      <div class="lienzo claro crece"><img src="assets/logo/logo-horizontal.svg" alt="Logo horizontal" style="width:430px"></div>
+      <div class="pie-lienzo fila" style="justify-content:space-between;align-items:baseline"><h3>Horizontal</h3><span class="peq">Encabezados, documentos, firmas de correo</span></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px">
+      <div style="display:flex;flex-direction:column">
+        <div class="lienzo claro crece"><img src="assets/logo/logo-horizontal-sin-eslogan.svg" alt="Logo horizontal sin eslogan" style="width:230px"></div>
+        <div class="pie-lienzo"><h3>Sin eslogan</h3><span class="peq">Barra de navegación de la app</span></div>
+      </div>
+      <div style="display:flex;flex-direction:column">
+        <div class="lienzo claro crece"><img src="assets/logo/logotipo.svg" alt="Logotipo" style="width:230px"></div>
+        <div class="pie-lienzo"><h3>Logotipo</h3><span class="peq">Cuando el isotipo ya aparece cerca</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 07 POSITIVO / NEGATIVO ============================ -->
+<section class="pag">
+  <div class="cab">
+    <div><p class="num">07 · Positivo, negativo y una tinta</p><h2>Siempre legible, sobre cualquier fondo</h2></div>
+    <p class="lead">A color sobre fondos claros, en negativo sobre azul o violeta, y a una sola tinta cuando la impresión o el material no permiten color, como en sellos, bordados o grabados.</p>
+  </div>
+  <div class="g3 crece" style="grid-template-rows:1fr 1fr;gap:20px">
+    <div style="display:flex;flex-direction:column"><div class="lienzo blanco crece"><img src="assets/logo/logo-horizontal.svg" alt="" style="width:270px"></div><p class="peq pie-lienzo"><b>Color</b> · fondo blanco o Nube</p></div>
+    <div style="display:flex;flex-direction:column"><div class="lienzo azul crece"><img src="assets/logo/logo-horizontal-negativo.svg" alt="" style="width:270px"></div><p class="peq pie-lienzo"><b>Negativo</b> · fondo Azul Aula</p></div>
+    <div style="display:flex;flex-direction:column"><div class="lienzo violeta crece"><img src="assets/logo/logo-horizontal-blanco.svg" alt="" style="width:270px"></div><p class="peq pie-lienzo"><b>Blanco</b> · fondos de color o degradado</p></div>
+    <div style="display:flex;flex-direction:column"><div class="lienzo blanco crece"><img src="assets/logo/logo-horizontal-azul.svg" alt="" style="width:270px"></div><p class="peq pie-lienzo"><b>Una tinta azul</b> · impresión a un color</p></div>
+    <div style="display:flex;flex-direction:column"><div class="lienzo blanco crece"><img src="assets/logo/logo-horizontal-negro.svg" alt="" style="width:270px"></div><p class="peq pie-lienzo"><b>Negro</b> · fotocopias y documentos oficiales</p></div>
+    <div style="display:flex;flex-direction:column"><div class="lienzo grad crece"><img src="assets/logo/logo-horizontal-blanco.svg" alt="" style="width:270px"></div><p class="peq pie-lienzo"><b>Blanco sobre degradado</b> · piezas de campaña</p></div>
+  </div>
+</section>
+
+<!-- ============================ 08 PROTECCIÓN ============================ -->
+<section class="pag nube">
+  <div class="cab">
+    <div><p class="num">08 · Área de protección y tamaño mínimo</p><h2>Dale aire para que respire</h2></div>
+    <p class="lead">La unidad <b style="color:var(--violeta)">x</b> es la altura de la “E” del logotipo. Ningún texto, imagen o borde debe entrar en ese margen alrededor del logo.</p>
+  </div>
+  <div class="g2 crece" style="grid-template-columns:1.2fr 1fr;gap:48px">
+    <div class="lienzo blanco" style="padding:20px">
+      <div class="proteccion" style="--x:50px">
+        <img src="assets/logo/logo-horizontal.svg" alt="Área de protección del logo" style="width:420px">
+        <span class="x" style="left:0;top:0;width:50px;height:50px">x</span>
+        <span class="x" style="right:0;top:0;width:50px;height:50px">x</span>
+        <span class="x" style="left:0;bottom:0;width:50px;height:50px">x</span>
+        <span class="x" style="right:0;bottom:0;width:50px;height:50px">x</span>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:22px;justify-content:center">
+      <h3>Tamaños mínimos</h3>
+      <div class="medida">
+        <div><img src="assets/logo/logo-vertical.svg" alt="" style="height:76px;width:auto"><span class="peq"><b>Vertical</b><br>30 mm · 120 px</span></div>
+        <div><img src="assets/logo/logo-horizontal.svg" alt="" style="height:40px;width:auto"><span class="peq"><b>Horizontal</b><br>40 mm · 160 px</span></div>
+      </div>
+      <div class="medida">
+        <div><img src="assets/logo/isotipo.svg" alt="" style="height:44px;width:auto"><span class="peq"><b>Isotipo</b><br>12 mm · 48 px</span></div>
+        <div><img src="assets/logo/isotipo-compacto.svg" alt="" style="height:22px;width:auto"><span class="peq"><b>Compacto</b><br>5 mm · 16 px</span></div>
+      </div>
+      <p class="peq">Por debajo de estos tamaños los detalles se pierden: usa la siguiente versión más simple.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 09 USOS INCORRECTOS ============================ -->
+<section class="pag">
+  <div class="cab">
+    <div><p class="num">09 · Usos incorrectos</p><h2>Lo que nunca se hace con el logo</h2></div>
+    <p class="lead">El logo se usa solo a partir de los archivos oficiales. Si una pieza necesita algo que no está aquí, es mejor preguntar antes que improvisar.</p>
+  </div>
+  <div class="g4 crece" style="align-content:start;row-gap:28px">
+    <div class="mal"><div class="lienzo claro"><img src="assets/logo/logo-horizontal-sin-eslogan.svg" alt="" style="width:140px;transform:scaleX(1.5)"></div><span class="marca-x"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 2l8 8M10 2l-8 8" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></span><p>No deformar ni estirar</p></div>
+    <div class="mal"><div class="lienzo claro"><img src="assets/logo/logo-horizontal-sin-eslogan.svg" alt="" style="width:200px;transform:rotate(-14deg)"></div><span class="marca-x"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 2l8 8M10 2l-8 8" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></span><p>No rotar</p></div>
+    <div class="mal"><div class="lienzo claro"><img src="assets/logo/logo-horizontal-sin-eslogan.svg" alt="" style="width:200px;filter:hue-rotate(150deg) saturate(1.6)"></div><span class="marca-x"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 2l8 8M10 2l-8 8" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></span><p>No cambiar los colores</p></div>
+    <div class="mal"><div class="lienzo claro"><img src="assets/logo/logo-horizontal-sin-eslogan.svg" alt="" style="width:200px;filter:drop-shadow(5px 6px 3px rgba(0,0,0,.45))"></div><span class="marca-x"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 2l8 8M10 2l-8 8" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></span><p>No agregar sombras ni efectos</p></div>
+    <div class="mal"><div class="lienzo claro"><span style="font-family:'Times New Roman',serif;font-size:40px;font-weight:700;color:var(--azul)">TeachEase</span></div><span class="marca-x"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 2l8 8M10 2l-8 8" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></span><p>No reescribir con otra fuente</p></div>
+    <div class="mal"><div class="lienzo violeta"><img src="assets/logo/logo-horizontal-sin-eslogan.svg" alt="" style="width:200px"></div><span class="marca-x"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 2l8 8M10 2l-8 8" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></span><p>No usar a color sobre fondos sin contraste</p></div>
+    <div class="mal"><div class="lienzo foto"><img src="assets/logo/logo-horizontal-sin-eslogan.svg" alt="" style="width:200px"></div><span class="marca-x"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 2l8 8M10 2l-8 8" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></span><p>No poner sobre fondos recargados</p></div>
+    <div class="mal"><div class="lienzo claro" style="gap:10px;flex-direction:row-reverse"><img src="assets/logo/isotipo-compacto.svg" alt="" style="width:46px"><img src="assets/logo/logotipo.svg" alt="" style="width:150px"></div><span class="marca-x"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 2l8 8M10 2l-8 8" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></span><p>No reacomodar las piezas</p></div>
+  </div>
+</section>
+
+<!-- ============================ 10 COLOR ============================ -->
+<section class="pag">
+  <div class="cab">
+    <div><p class="num">10 · Paleta de color</p><h2>Del turquesa que acompaña al violeta que impulsa</h2></div>
+    <p class="lead">El Azul Aula da confianza y es la base de todo. El degradado de turquesa a violeta es la firma de la marca: se usa en acentos, nunca para llenar textos largos.</p>
+  </div>
+  <div class="crece" style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:18px">
+    <div class="muestra"><div class="c" style="background:#0C1A5E"></div><div class="d"><h3>Azul Aula</h3><code>HEX #0C1A5E<br>RGB 12 · 26 · 94<br>CMYK 100 · 90 · 20 · 30</code></div></div>
+    <div class="muestra"><div class="c" style="background:#3FBFB0"></div><div class="d"><h3>Turquesa Voz</h3><code>HEX #3FBFB0<br>RGB 63 · 191 · 176<br>CMYK 65 · 0 · 35 · 0</code></div></div>
+    <div class="muestra"><div class="c" style="background:#3E5BE8"></div><div class="d"><h3>Azul Idea</h3><code>HEX #3E5BE8<br>RGB 62 · 91 · 232<br>CMYK 80 · 62 · 0 · 0</code></div></div>
+    <div class="muestra"><div class="c" style="background:#5B34EE"></div><div class="d"><h3>Violeta Impulso</h3><code>HEX #5B34EE<br>RGB 91 · 52 · 238<br>CMYK 75 · 78 · 0 · 0</code></div></div>
+  </div>
+  <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:18px;margin-top:18px">
+    <div class="muestra" style="flex-direction:row"><div style="width:96px;background:linear-gradient(90deg,#3FBFB0,#3E5BE8 55%,#5B34EE)"></div><div class="d"><h3>Degradado de marca</h3><code>Turquesa 0% → Azul Idea 55% → Violeta 100%</code></div></div>
+    <div class="muestra" style="flex-direction:row"><div style="width:56px;background:#A9AEE3"></div><div class="d"><h3>Lavanda Calma</h3><code>#A9AEE3 · 169 · 174 · 227</code></div></div>
+    <div class="muestra" style="flex-direction:row"><div style="width:56px;background:#F3F5FB;border-right:1px solid var(--linea)"></div><div class="d"><h3>Nube</h3><code>#F3F5FB · 243 · 245 · 251</code></div></div>
+    <div class="muestra" style="flex-direction:row"><div style="width:56px;background:#5C6386"></div><div class="d"><h3>Gris Pizarra</h3><code>#5C6386 · 92 · 99 · 134</code></div></div>
+  </div>
+  <div style="margin-top:22px">
+    <p class="etq" style="margin-bottom:8px">Proporción de uso</p>
+    <div class="proporcion">
+      <div style="flex:45;background:#fff;border:1px solid var(--linea);border-right:0;border-radius:14px 0 0 14px;color:var(--pizarra)">Blanco y Nube 45%</div>
+      <div style="flex:30;background:#0C1A5E;color:#fff">Azul Aula 30%</div>
+      <div style="flex:15;background:linear-gradient(90deg,#3FBFB0,#3E5BE8 55%,#5B34EE);color:#fff">Degradado 15%</div>
+      <div style="flex:10;background:#A9AEE3;color:var(--azul)">Apoyo 10%</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 11 CONTRASTE ============================ -->
+<section class="pag nube">
+  <div class="cab">
+    <div><p class="num">11 · Combinaciones y contraste</p><h2>Que todos puedan leer</h2></div>
+    <p class="lead">Estas combinaciones cumplen el contraste mínimo de accesibilidad (WCAG AA, 4,5:1) para texto normal. El turquesa sobre blanco no lo cumple: úsalo en iconos, líneas y fondos, no en textos.</p>
+  </div>
+  <div class="g4" style="row-gap:18px">
+    <div class="combo" style="background:#fff;color:#0C1A5E"><b>Aa Azul sobre blanco</b><span><span>Textos y títulos</span><span>15,8:1</span></span></div>
+    <div class="combo" style="background:#0C1A5E;color:#fff"><b>Aa Blanco sobre azul</b><span><span>Portadas y menús</span><span>15,8:1</span></span></div>
+    <div class="combo" style="background:#5B34EE;color:#fff"><b>Aa Blanco sobre violeta</b><span><span>Botones principales</span><span>6,6:1</span></span></div>
+    <div class="combo" style="background:#3E5BE8;color:#fff"><b>Aa Blanco sobre Azul Idea</b><span><span>Enlaces y estados</span><span>5,4:1</span></span></div>
+    <div class="combo" style="background:#3FBFB0;color:#0C1A5E"><b>Aa Azul sobre turquesa</b><span><span>Etiquetas y avisos</span><span>7,0:1</span></span></div>
+    <div class="combo" style="background:#A9AEE3;color:#0C1A5E"><b>Aa Azul sobre lavanda</b><span><span>Tarjetas secundarias</span><span>7,4:1</span></span></div>
+    <div class="combo" style="background:#fff;color:#5C6386"><b>Aa Pizarra sobre blanco</b><span><span>Texto secundario</span><span>5,9:1</span></span></div>
+    <div class="combo" style="background:#fff;color:#3FBFB0;outline:2px dashed #E5484D;outline-offset:-2px"><b>Aa Turquesa sobre blanco</b><span><span style="color:#B42318">Evitar en texto</span><span style="color:#B42318">2,3:1</span></span></div>
+  </div>
+  <div class="tarjeta" style="margin-top:22px;background:#fff;display:flex;gap:28px;align-items:center">
+    <img src="assets/logo/isotipo-compacto.svg" alt="" style="width:54px">
+    <p style="color:var(--azul)">Regla rápida: <b>texto siempre en Azul Aula, blanco o Gris Pizarra</b>. El turquesa, el violeta y el degradado son para dar énfasis a palabras sueltas, botones e ilustraciones.</p>
+  </div>
+</section>
+
+<!-- ============================ 12 TIPOGRAFÍA ============================ -->
+<section class="pag">
+  <div class="cab">
+    <div><p class="num">12 · Tipografía</p><h2>Poppins, una sola familia para todo</h2></div>
+    <p class="lead">Geométrica, redonda y muy legible en pantalla. Es la misma letra del logotipo, así que todo se siente de la misma familia. Es gratuita en Google Fonts. Si no está disponible, se usa Arial.</p>
+  </div>
+  <div class="g2 crece" style="grid-template-columns:1fr 1.1fr;gap:56px">
+    <div style="display:flex;flex-direction:column;justify-content:space-between">
+      <div>
+        <div class="especimen">Aa<span class="grad-txt">Ee</span></div>
+        <p style="font-size:20px;color:var(--azul);margin-top:20px;letter-spacing:.02em">ABCDEFGHIJKLMNÑOPQRSTUVWXYZ<br>abcdefghijklmnñopqrstuvwxyz<br>áéíóú ¿? ¡! 0123456789</p>
+      </div>
+      <div class="pesos">
+        <div><span style="font-weight:400">Regular</span><small>400 · textos largos</small></div>
+        <div><span style="font-weight:500">Medium</span><small>500 · eslogan, botones, menús</small></div>
+        <div><span style="font-weight:600">SemiBold</span><small>600 · títulos y logotipo</small></div>
+        <div><span style="font-weight:700">Bold</span><small>700 · cifras y destacados</small></div>
+      </div>
+    </div>
+    <div class="jerarquia" style="align-self:center">
+      <div><small>Título principal<br>SemiBold 44 / 48</small><span style="font-size:40px;font-weight:600;letter-spacing:-.02em;line-height:1.1">Enseña con confianza</span></div>
+      <div><small>Subtítulo<br>SemiBold 24 / 32</small><span style="font-size:24px;font-weight:600">Tu clase de inglés de mañana</span></div>
+      <div><small>Destacado<br>Medium 18 / 28</small><span style="font-size:18px;font-weight:500;color:var(--violeta)">Practica 10 minutos al día</span></div>
+      <div><small>Texto<br>Regular 16 / 26</small><span style="font-size:16px;line-height:1.6;color:var(--pizarra)">Actividades cortas, apoyo virtual y recursos listos para llevar al aula.</span></div>
+      <div><small>Etiqueta<br>SemiBold 12 · mayúsculas</small><span class="etq" style="color:var(--azul)">Nivel A2 · Saludos</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 13 ELEMENTOS GRÁFICOS ============================ -->
+<section class="pag">
+  <div class="cab">
+    <div><p class="num">13 · Elementos gráficos</p><h2>Piezas del logo que se vuelven lenguaje</h2></div>
+    <p class="lead">Partes del isotipo se pueden usar solas para construir piezas sin repetir el logo en todas partes. Siempre con los colores oficiales y sin deformarlas.</p>
+  </div>
+  <div class="g4">
+    <div style="display:flex;flex-direction:column">
+      <div class="lienzo claro" style="height:200px"><svg width="170" height="120" viewBox="0 0 170 120" aria-hidden="true"><defs><linearGradient id="ge1" x1="0" x2="1"><stop offset="0" stop-color="#3FBFB0"/><stop offset=".55" stop-color="#3E5BE8"/><stop offset="1" stop-color="#5B34EE"/></linearGradient></defs><path d="M14 112A72 72 0 0 1 156 92" fill="none" stroke="url(#ge1)" stroke-width="10" stroke-linecap="round"/></svg></div>
+      <div class="pie-lienzo"><h3>El arco</h3><p>Para enmarcar fotos de docentes, cifras o títulos importantes.</p></div>
+    </div>
+    <div style="display:flex;flex-direction:column">
+      <div class="lienzo claro" style="height:200px"><svg width="150" height="110" viewBox="0 0 150 110" aria-hidden="true"><rect x="5" y="5" width="140" height="78" rx="39" fill="#3FBFB0"/><path d="M30 74L20 106L66 80Z" fill="#3FBFB0"/><circle cx="50" cy="44" r="8" fill="#0C1A5E"/><circle cx="75" cy="44" r="8" fill="#0C1A5E"/><circle cx="100" cy="44" r="8" fill="#0C1A5E"/></svg></div>
+      <div class="pie-lienzo"><h3>La burbuja</h3><p>Para frases, consejos, testimonios y mensajes del asistente.</p></div>
+    </div>
+    <div style="display:flex;flex-direction:column">
+      <div class="lienzo claro" style="height:200px"><svg width="120" height="110" viewBox="0 0 120 110" aria-hidden="true"><g fill="none" stroke-width="10" stroke-linecap="round"><path d="M20 40L56 20" stroke="#3FBFB0"/><path d="M26 66H74" stroke="#3E5BE8"/><path d="M20 92L56 106" stroke="#5B34EE"/></g></svg></div>
+      <div class="pie-lienzo"><h3>Las chispas</h3><p>Para celebrar un logro o señalar algo nuevo. Siempre en grupos de tres.</p></div>
+    </div>
+    <div style="display:flex;flex-direction:column">
+      <div class="lienzo claro" style="height:200px"><svg width="170" height="90" viewBox="0 0 170 90" aria-hidden="true"><g fill="none" stroke-linecap="round"><path d="M85 40C70 28 52 24 30 25M85 40C100 28 118 24 140 25" stroke="#8FD9CF" stroke-width="7"/><path d="M85 58C66 44 44 40 18 43M85 58C104 44 126 40 152 43" stroke="#3FBFB0" stroke-width="8"/><path d="M85 78C62 62 36 59 6 64M85 78C108 62 134 59 164 64" stroke="#5B34EE" stroke-width="9"/></g></svg></div>
+      <div class="pie-lienzo"><h3>El libro</h3><p>Como base de secciones de recursos, cursos y material pedagógico.</p></div>
+    </div>
+  </div>
+  <div class="tarjeta" style="margin-top:22px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center">
+    <div class="fila" style="gap:14px">
+      <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="#0C1A5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg></div>
+      <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="#0C1A5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+      <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="#0C1A5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4"/></svg></div>
+      <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="#0C1A5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></div>
+    </div>
+    <div><h3>Iconografía</h3><p>Iconos de línea, trazo de 2 px, puntas y esquinas redondeadas, en Azul Aula sobre un cuadro blanco o Nube. Para la app web se recomienda la librería gratuita Lucide, que ya sigue este estilo.</p></div>
+  </div>
+</section>
+
+<!-- ============================ 14 APLICACIONES DIGITALES ============================ -->
+<section class="pag nube">
+  <div class="cab">
+    <div><p class="num">14 · Aplicaciones digitales</p><h2>La marca dentro de la app web</h2></div>
+    <p class="lead">Así se ve la identidad en la plataforma: logo sin eslogan en la barra, botones en violeta, el asistente conversando en burbujas y el ícono compacto en el celular.</p>
+  </div>
+  <div class="crece" style="display:grid;grid-template-columns:1fr 250px;gap:48px;align-items:center">
+    <div class="navegador">
+      <div class="barra"><i></i><i></i><i></i><span>teachease.app</span></div>
+      <div class="web-nav">
+        <img src="assets/logo/logo-horizontal-sin-eslogan.svg" alt="TeachEase" style="height:34px;width:auto">
+        <nav><span style="color:var(--azul)">Inicio</span><span>Cursos</span><span>Practicar</span><span>Recursos</span></nav>
+        <span class="btn prim">Empezar</span>
+      </div>
+      <div class="web-hero">
+        <div>
+          <p class="etq" style="color:var(--violeta)">Para docentes y auxiliares</p>
+          <h4 style="margin:10px 0 14px">Enseña una segunda lengua <span class="grad-txt">sin miedo</span></h4>
+          <p style="font-size:13.5px">Aprende a tu ritmo con actividades interactivas, apoyo virtual y recursos listos para tu clase.</p>
+          <div class="fila" style="gap:10px;margin-top:20px"><span class="btn prim">Probar gratis</span><span class="btn sec">Ver cursos</span></div>
+        </div>
+        <div class="chat">
+          <div class="fila" style="gap:10px;align-items:center"><img src="assets/logo/isotipo-compacto.svg" alt="" style="width:26px"><span style="font-size:12px;font-weight:600">Asistente TeachEase</span></div>
+          <div class="burb bot">¡Hola! ¿Qué tema vas a enseñar mañana?</div>
+          <div class="burb yo">Los días de la semana en inglés</div>
+          <div class="burb bot">Perfecto. Te preparo 3 actividades cortas y practicamos la pronunciación juntos.</div>
+        </div>
+      </div>
+    </div>
+    <div class="telefono">
+      <div class="pantalla">
+        <div class="app"><i></i>Notas</div><div class="app"><i></i>Fotos</div><div class="app"><i></i>Mapas</div><div class="app"><i></i>Correo</div>
+        <div class="app"><img src="assets/logo/app-icono.svg" alt="">TeachEase</div><div class="app"><i></i>Clima</div><div class="app"><i></i>Reloj</div><div class="app"><i></i>Música</div>
+        <div class="app"><i></i>Ajustes</div><div class="app"><i></i>Cámara</div><div class="app"><i></i>Libros</div><div class="app"><i></i>Tienda</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 15 APLICACIONES IMPRESAS ============================ -->
+<section class="pag">
+  <div class="cab">
+    <div><p class="num">15 · Aplicaciones impresas y redes</p><h2>Una misma voz en cada contacto</h2></div>
+    <p class="lead">Tarjeta de presentación, plantilla de diapositivas para exposiciones y perfil en redes sociales. Los nombres y datos son de ejemplo.</p>
+  </div>
+  <div class="crece" style="display:grid;grid-template-columns:340px 1fr 260px;gap:36px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <div class="tarjeta-pres" style="background:var(--azul);display:flex;align-items:center;justify-content:center">
+        <img src="assets/logo/logo-vertical-negativo.svg" alt="" style="width:150px">
+      </div>
+      <div class="tarjeta-pres" style="background:#fff;padding:26px 28px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid var(--linea)">
+        <img src="assets/logo/logo-horizontal-sin-eslogan.svg" alt="" style="height:26px;width:auto;align-self:flex-start">
+        <div><p style="font-size:16px;font-weight:600;color:var(--azul)">Nombre Apellido</p><p class="peq">Equipo TeachEase</p></div>
+        <p class="peq" style="font-size:11px">correo@teachease.app · teachease.app</p>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <div class="diapo" style="background:var(--azul);color:#fff;padding:34px 40px;display:flex;flex-direction:column;justify-content:space-between">
+        <img src="assets/logo/logo-horizontal-sin-eslogan-negativo.svg" alt="" style="height:26px;width:auto;align-self:flex-start">
+        <div><p class="etq" style="color:#5FD8C8">Problema</p><p style="font-size:21px;font-weight:600;line-height:1.25;color:#fff;margin-top:8px;max-width:250px">Enseñar una segunda lengua sin la formación necesaria</p></div>
+        <svg style="position:absolute;right:22px;bottom:16px" width="86" height="86" viewBox="0 0 150 150" aria-hidden="true"><defs><linearGradient id="dp1" x1="0" x2="1"><stop offset="0" stop-color="#5FD8C8"/><stop offset="1" stop-color="#8E74FF"/></linearGradient></defs><path d="M14 120A64 64 0 0 1 136 60" fill="none" stroke="url(#dp1)" stroke-width="9" stroke-linecap="round"/><rect x="50" y="60" width="66" height="44" rx="22" fill="#5FD8C8"/><circle cx="70" cy="82" r="4.5" fill="#0C1A5E"/><circle cx="83" cy="82" r="4.5" fill="#0C1A5E"/><circle cx="96" cy="82" r="4.5" fill="#0C1A5E"/></svg>
+      </div>
+      <p class="peq">Plantilla de diapositiva 16:9: fondo Azul Aula, título en blanco, etiqueta en turquesa y un elemento gráfico de la marca.</p>
+    </div>
+    <div class="perfil">
+      <div style="height:90px;background:linear-gradient(135deg,#3FBFB0,#3E5BE8 55%,#5B34EE)"></div>
+      <div style="padding:0 20px 22px;margin-top:-38px">
+        <img src="assets/logo/app-icono-blanco.svg" alt="" style="width:76px;border-radius:50%;border:4px solid #fff;background:#fff">
+        <p style="font-size:15px;font-weight:600;color:var(--azul);margin-top:10px">TeachEase</p>
+        <p class="peq">@teachease</p>
+        <p style="font-size:12.5px;margin-top:10px;color:var(--azul)">Tu apoyo silencioso en el aula. Aprende y fortalece una segunda lengua para enseñar con confianza.</p>
+        <span class="btn prim" style="margin-top:14px;padding:8px 18px;font-size:12px">Seguir</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 16 ARCHIVOS Y EQUIPO ============================ -->
+<section class="pag oscura">
+  <div class="cab">
+    <div><p class="num">16 · Archivos y equipo</p><h2>Todo listo para usar</h2></div>
+    <p class="lead">Los archivos oficiales están en la carpeta <b style="color:#fff">marca/assets/logo</b> del repositorio, en SVG (vector, para todo) y PNG (para Word, PowerPoint y redes).</p>
+  </div>
+  <div class="archivos">
+    <a href="assets/logo/logo-vertical.svg">Logo vertical <small>SVG · PNG</small></a>
+    <a href="assets/logo/logo-horizontal.svg">Logo horizontal <small>SVG · PNG</small></a>
+    <a href="assets/logo/logotipo.svg">Logotipo <small>SVG · PNG</small></a>
+    <a href="assets/logo/isotipo.svg">Isotipo completo <small>SVG · PNG</small></a>
+    <a href="assets/logo/isotipo-compacto.svg">Isotipo compacto <small>SVG · PNG</small></a>
+    <a href="assets/logo/app-icono.svg">Ícono de app <small>SVG · PNG</small></a>
+    <a href="tokens/tokens.css">Variables para la web <small>CSS</small></a>
+    <a href="tokens/tokens.json">Paleta y tipografía <small>JSON</small></a>
+    <a href="https://fonts.google.com/specimen/Poppins">Poppins <small>Google Fonts</small></a>
+  </div>
+  <div class="crece" style="display:grid;grid-template-columns:1fr auto;gap:48px;align-items:end;margin-top:40px">
+    <div>
+      <p class="etq" style="color:#AEB3DA;margin-bottom:14px">Equipo</p>
+      <p style="font-size:17px;line-height:1.9;color:#fff">Erica Isaza Osorio · Lida Andrea Araque · María José Peña · Paola Duque<br>Paola Grajales · Valentina López · Valeria Suárez Gutiérrez</p>
+      <p class="peq" style="margin-top:14px">Institución Universitaria Marco Fidel Suárez</p>
+    </div>
+    <img src="assets/logo/logo-vertical-negativo.svg" alt="TeachEase" style="width:230px">
+  </div>
+</section>
+
+</body>
+</html>
