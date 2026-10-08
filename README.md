@@ -5,6 +5,10 @@ Una plataforma educativa con inteligencia artificial para que docentes y auxilia
 
 ## Qué hay en este repositorio
 
+- **`app/`**: la app web instalable (Android, iPhone y computador). Ver [app/README.md](app/README.md).
+- **`marca/`**: el manual de marca, los logos y los colores.
+
+
 ```
 marca/
 ├── index.html                     Manual de marca (se abre en el navegador)
@@ -62,6 +66,6 @@ npm run build   # las tres cosas
 
 Los colores y las formas del logo están en `marca/scripts/generar-logos.js`. Si se cambia un color, hay que actualizarlo también en `marca/tokens/` y en `marca/index.html`.
 
-## Próximo paso
+## App web
 
-La app web de TeachEase. `marca/tokens/tokens.css` ya trae las variables de marca para usarlas desde el primer día.
+La app está en `app/` y usa los mismos logos y colores de este manual. Cómo correrla, instalarla y publicarla: [app/README.md](app/README.md).

@@ -1,0 +1,21 @@
+# Publicación de la app web de TeachEase en Netlify.
+# La app vive en la carpeta app/. La función del asistente con IA está en app/netlify/functions.
+[build]
+  base = "app"
+  command = "npm run build"
+  publish = "dist"
+
+[functions]
+  directory = "netlify/functions"
+
+# El service worker y el manifiesto no se deben quedar en caché, para que las actualizaciones lleguen
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/manifest.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json"
+    Cache-Control = "no-cache"
