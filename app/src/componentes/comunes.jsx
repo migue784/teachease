@@ -103,9 +103,9 @@ export function SinRed() {
 // El robot cambia solo a su versión clara cuando el celular está en modo oscuro
 export const Robot = ({ tam = 56, negativo = false, vivo = true }) => (
   <picture style={{ flex: 'none', display: 'block' }}>
-    {!negativo && <source srcSet="/marca/isotipo-compacto-negativo.svg" media="(prefers-color-scheme: dark)" />}
+    {!negativo && <source srcSet="marca/isotipo-compacto-negativo.svg" media="(prefers-color-scheme: dark)" />}
     <img
-      src={`/marca/isotipo-compacto${negativo ? '-negativo' : ''}.svg`}
+      src={`marca/isotipo-compacto${negativo ? '-negativo' : ''}.svg`}
       alt=""
       width={tam}
       height={tam}

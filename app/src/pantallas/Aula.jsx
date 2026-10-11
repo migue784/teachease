@@ -156,7 +156,7 @@ function PantallaGrande({ frase, alCerrar }) {
       >
         <X size={22} />
       </button>
-      <img src="/marca/isotipo-compacto-negativo.svg" alt="" style={{ width: 64 }} className="robot-vivo" />
+      <img src="marca/isotipo-compacto-negativo.svg" alt="" style={{ width: 64 }} className="robot-vivo" />
       <p style={{ fontSize: 'clamp(34px, 9vw, 72px)', fontWeight: 600, lineHeight: 1.1, letterSpacing: '-0.02em', textWrap: 'balance' }}>{frase.en}</p>
       <p style={{ fontSize: 20, color: 'var(--turquesa-claro)' }}>{frase.es}</p>
       <p style={{ fontSize: 14, color: '#b5badf', marginTop: 20 }}>Toca la pantalla para escucharla</p>

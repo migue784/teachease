@@ -5,6 +5,8 @@ import { VitePWA } from 'vite-plugin-pwa';
 // TeachEase como PWA: se instala desde el navegador en Android, iPhone y computador,
 // y funciona sin conexión (todo el contenido de práctica viaja con la app).
 export default defineConfig({
+  // Rutas relativas: la app funciona en la raíz del dominio o dentro de una subcarpeta
+  base: './',
   plugins: [
     react(),
     VitePWA({

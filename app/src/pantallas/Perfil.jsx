@@ -127,7 +127,7 @@ export default function Perfil({ perfil }) {
       )}
 
       <div className="pila" style={{ alignItems: 'center', gap: 6, marginTop: 10 }}>
-        <img src="/marca/logo-horizontal-sin-eslogan.svg" alt="TeachEase" style={{ height: 26 }} />
+        <img src="marca/logo-horizontal-sin-eslogan.svg" alt="TeachEase" style={{ height: 26 }} />
         <p className="sub" style={{ fontSize: 12.5 }}>
           Tu apoyo silencioso en el aula · versión 0.1
         </p>
