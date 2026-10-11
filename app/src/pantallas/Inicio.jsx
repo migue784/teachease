@@ -1,6 +1,8 @@
-import { Flame, Presentation, Mic, Layers, ArrowRight, Star } from 'lucide-react';
+import { Flame, Presentation, Mic, ArrowRight, Star, Target, GraduationCap, Timer } from 'lucide-react';
 import { usePersistente } from '../lib/almacen';
-import { leerProgreso, racha, puntosHoy } from '../lib/progreso';
+import { leerProgreso, racha, puntosHoy, siguienteLeccion, leccionesHechas } from '../lib/progreso';
+import { LECCIONES } from '../datos/ruta';
+import { ir } from '../lib/ruta';
 import { PALABRAS, TEMAS } from '../datos/temas';
 import { Robot, Escuchar } from '../componentes/comunes';
 import { BotonInstalar } from '../componentes/Instalar';
@@ -28,6 +30,7 @@ export default function Inicio({ perfil }) {
   const dias = racha(p);
   const palabra = palabraDelDia();
   const tema = TEMAS.find((t) => t.id === palabra.tema);
+  const proxima = siguienteLeccion(p);
 
   return (
     <>
@@ -58,6 +61,34 @@ export default function Inicio({ perfil }) {
         </p>
       </section>
 
+      {!p.nivelPrueba ? (
+        <button className="tarjeta fila" style={{ border: 0, textAlign: 'left' }} onClick={() => ir('diagnostico')}>
+          <span style={{ width: 52, height: 52, borderRadius: 16, background: 'var(--superficie-2)', display: 'grid', placeItems: 'center', flex: 'none', color: 'var(--violeta)' }}>
+            <Target size={26} />
+          </span>
+          <span style={{ flex: 1, minWidth: 0 }}>
+            <b style={{ display: 'block' }}>Descubre tu nivel de inglés</b>
+            <span className="sub">3 minutos y te digo por dónde empezar tu ruta.</span>
+          </span>
+          <ArrowRight size={18} />
+        </button>
+      ) : (
+        proxima && (
+          <button className="tarjeta fila" style={{ border: 0, textAlign: 'left' }} onClick={() => ir('leccion', { id: proxima.id })}>
+            <span style={{ width: 52, height: 52, borderRadius: 16, background: 'var(--superficie-2)', display: 'grid', placeItems: 'center', flex: 'none', color: 'var(--violeta)' }}>
+              <GraduationCap size={26} />
+            </span>
+            <span style={{ flex: 1, minWidth: 0 }}>
+              <span className="sub" style={{ display: 'block' }}>
+                Tu ruta · {leccionesHechas(p)} de {LECCIONES.length}
+              </span>
+              <b style={{ display: 'block' }}>{proxima.titulo}</b>
+            </span>
+            <ArrowRight size={18} />
+          </button>
+        )
+      )}
+
       <BotonInstalar />
 
       <a href="#/preparar" className="tarjeta grad fila" style={{ textDecoration: 'none', alignItems: 'center', gap: 14 }}>
@@ -77,10 +108,10 @@ export default function Inicio({ perfil }) {
           <b>Modo Aula</b>
           <span className="sub">Lo que necesitas decir en clase, al instante.</span>
         </a>
-        <a href="#/practicar" className="tarjeta pila" style={{ textDecoration: 'none', color: 'inherit', gap: 8 }}>
-          <Layers size={24} color="var(--violeta)" />
-          <b>Practicar</b>
-          <span className="sub">Tarjetas, pronunciación y quiz.</span>
+        <a href="#/kit" className="tarjeta pila" style={{ textDecoration: 'none', color: 'inherit', gap: 8 }}>
+          <Timer size={24} color="var(--violeta)" />
+          <b>Kit del aula</b>
+          <span className="sub">Temporizador, ruleta, semáforo y puntos.</span>
         </a>
       </div>
 

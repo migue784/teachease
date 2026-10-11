@@ -5,6 +5,7 @@ import { PALABRAS } from '../datos/temas';
 import { usePersistente } from '../lib/almacen';
 import { hablar } from '../lib/voz';
 import { Encabezado, Escuchar } from '../componentes/comunes';
+import { HERRAMIENTAS } from './Kit';
 
 const sinTildes = (t) => t.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 
@@ -48,6 +49,17 @@ export default function Aula() {
           </button>
         }
       />
+
+      <nav className="grid4" aria-label="Kit del aula">
+        {HERRAMIENTAS.map(({ id, nombre, Icono, color }) => (
+          <a key={id} href={`#/kit?h=${id}`} className="tarjeta pila" style={{ textDecoration: 'none', color: 'inherit', alignItems: 'center', gap: 6, padding: '12px 4px', textAlign: 'center' }}>
+            <span style={{ width: 40, height: 40, borderRadius: 13, background: color, color: '#fff', display: 'grid', placeItems: 'center' }}>
+              <Icono size={21} />
+            </span>
+            <span style={{ fontSize: 11.5, fontWeight: 500, lineHeight: 1.2 }}>{nombre.split(' ')[0]}</span>
+          </a>
+        ))}
+      </nav>
 
       {susurro && (
         <p className="aviso ok">

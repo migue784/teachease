@@ -1,9 +1,10 @@
 import { leer, guardar } from './almacen';
+import { LECCIONES, INICIO_POR_NIVEL } from '../datos/ruta';
 
 // Progreso de la persona: puntos, racha de días y repaso espaciado (cajas de Leitner).
 const hoy = () => new Date().toLocaleDateString('en-CA'); // AAAA-MM-DD en hora local
 
-const BASE = { puntos: 0, racha: 0, ultimoDia: null, dias: {}, cajas: {}, pronunciadas: 0, clases: 0 };
+const BASE = { puntos: 0, racha: 0, ultimoDia: null, dias: {}, cajas: {}, pronunciadas: 0, clases: 0, lecciones: {}, nivelPrueba: null, sonidos: {} };
 
 export const leerProgreso = () => ({ ...BASE, ...leer('progreso', BASE) });
 
@@ -56,3 +57,42 @@ export function semana(p) {
 }
 
 export const dominadas = (p) => Object.values(p.cajas).filter((c) => c >= 4).length;
+
+// ---------------- Ruta de aprendizaje ----------------
+export function completarLeccion(id, est) {
+  const p = leerProgreso();
+  p.lecciones = { ...p.lecciones, [id]: Math.max(est, p.lecciones[id] || 0) };
+  guardar('progreso', p);
+  return sumarPuntos(10 + est * 10);
+}
+
+export function guardarNivelPrueba(nivel) {
+  const p = leerProgreso();
+  p.nivelPrueba = nivel;
+  guardar('progreso', p);
+}
+
+// Una lección está abierta si es la primera, si la anterior ya se hizo,
+// o si la prueba de nivel la ubicó más adelante.
+export function abierta(p, indice) {
+  if (indice === 0) return true;
+  if (p.lecciones[LECCIONES[indice - 1].id]) return true;
+  const desde = LECCIONES.findIndex((l) => l.id === INICIO_POR_NIVEL[p.nivelPrueba]);
+  return desde >= 0 && indice <= desde;
+}
+
+// La siguiente lección: desde donde la ubicó la prueba de nivel en adelante;
+// si ya hizo todo eso, la primera que le haya quedado pendiente antes.
+export function siguienteLeccion(p) {
+  const desde = Math.max(0, LECCIONES.findIndex((l) => l.id === INICIO_POR_NIVEL[p.nivelPrueba]));
+  const pendiente = (l, i) => abierta(p, i) && !p.lecciones[l.id];
+  return LECCIONES.find((l, i) => i >= desde && pendiente(l, i)) || LECCIONES.find(pendiente) || null;
+}
+
+export const leccionesHechas = (p) => Object.keys(p.lecciones).length;
+
+export function marcarSonido(id) {
+  const p = leerProgreso();
+  p.sonidos = { ...p.sonidos, [id]: (p.sonidos[id] || 0) + 1 };
+  guardar('progreso', p);
+}

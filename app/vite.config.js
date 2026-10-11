@@ -7,6 +7,8 @@ import { VitePWA } from 'vite-plugin-pwa';
 export default defineConfig({
   // Rutas relativas: la app funciona en la raíz del dominio o dentro de una subcarpeta
   base: './',
+  // Fecha de compilación: se muestra en Perfil para saber qué versión tiene cada celular
+  define: { __COMPILADA__: JSON.stringify(new Date().toISOString().slice(0, 16).replace('T', ' ')) },
   plugins: [
     react(),
     VitePWA({

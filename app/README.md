@@ -3,17 +3,21 @@
 App web instalable (PWA) para docentes y auxiliares que enseñan una segunda lengua.
 Se abre desde el navegador y se instala en Android, iPhone y computador sin pasar por ninguna tienda.
 
-## Qué hace hoy (versión 0.1)
+## Qué hace hoy (versión 0.2)
 
-| Pantalla | Qué hace |
+| Sección | Qué hace |
 |---|---|
-| **Bienvenida** | Nombre, rol, grado, nivel de inglés y meta diaria. Botón para instalar la app. |
-| **Inicio** | Saludo, racha de días, meta del día, palabra del día con audio y accesos rápidos. |
-| **Modo Aula** | El diferencial: buscas en español lo que quieres decir y tienes la frase en inglés, cómo se pronuncia y el audio. Incluye **modo susurro** (el audio suena bajito para que solo lo escuche quien enseña), **mostrar a la clase** (la frase en pantalla completa) y frases favoritas. 47 frases organizadas por momento de la clase. |
-| **Practicar** | 10 temas y 88 palabras. Tarjetas con repaso espaciado, pronunciación evaluada con el micrófono y quiz de escuchar y elegir. |
-| **Preparar clase** | Eliges tema, grado y duración (30, 45 o 60 min) y arma la clase paso a paso: objetivo, vocabulario con audio, actividades, tiempos y frases para cada momento. Se comparte por WhatsApp. |
-| **Asistente** | Chat. Sin conexión responde con el contenido de la app («¿cómo se dice…?», «¿qué significa…?», ideas de clase). Con la API de Claude configurada responde cualquier pregunta con IA. |
-| **Perfil** | Progreso: racha, puntos, palabras dominadas, pronunciaciones, clases preparadas y la semana. |
+| **Bienvenida** | Nombre, rol, grado, nivel y meta diaria. Botón para instalar la app. |
+| **Inicio** | Racha, meta del día, siguiente lección de la ruta, preparar clase, Modo Aula, Kit del aula y palabra del día. |
+| **Aprender** | **Prueba de nivel** (12 preguntas) y **ruta del docente**: 6 unidades y 18 lecciones con el inglés para dar clase. Cada lección arma sola sus ejercicios: aprender, elegir, ordenar la frase, escuchar y decir. Estrellas y avance. |
+| **Pronunciación** | 10 sonidos difíciles para hispanohablantes (th, v/b, ship/sheep, sh/ch, h, s inicial, j/y, w, -ed). Cómo poner la boca, **grabarse y comparar** con el modelo, y juego de "¿cuál escuchaste?". |
+| **Vocabulario** | 20 temas y 179 palabras con dibujo. Tarjetas con repaso espaciado, pronunciación evaluada y quiz. |
+| **Material de clase** | Por tema: **tarjetas para proyectar** en pantalla completa, **bingo** (cartones para imprimir y la app canta las palabras) y **hoja de trabajo** imprimible. |
+| **Modo Aula** | 70 frases para clase buscables en español, con pronunciación, audio, modo susurro, mostrar a la clase y favoritas. |
+| **Kit del aula** | **Temporizador** con campana, **ruleta** de nombres, **semáforo de ruido** (mide el volumen del salón, no graba) y **puntos por equipos**. Cada uno con las frases en inglés para usarlo. |
+| **Preparar clase** | Plan paso a paso por tema, grado y duración, con enlace al material. Se comparte por WhatsApp. |
+| **Asistente** | Responde sin conexión con el contenido de la app; con la API de Claude configurada responde con IA. |
+| **Perfil** | Progreso, meta diaria, **buscar actualizaciones** (instala la versión nueva sin cerrar la app) y borrar datos. |
 
 Todo funciona **sin internet** una vez abierta la app la primera vez, salvo el asistente con IA. El progreso se guarda solo en el celular de cada persona.
 
@@ -51,6 +55,10 @@ app/
 Para agregar contenido no hace falta tocar pantallas: se agregan temas en `src/datos/temas.js`, frases en `src/datos/frases.js` y actividades en `src/datos/actividades.js`.
 
 ## Publicar
+
+La app está publicada en **https://migue784.github.io/teachease/**. Cada cambio que se sube a `app/` se compila y se publica solo con el proceso `.github/workflows/publicar-app.yml` (rama `gh-pages`). En el celular, Perfil → **Buscar actualizaciones** trae la versión nueva al instante.
+
+También se puede publicar en Netlify:
 
 El archivo `netlify.toml` de la raíz ya está listo para Netlify: conectar el repositorio y publicar.
 

@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { Share2, Check, Layers, Clock } from 'lucide-react';
+import { Share2, Check, Layers, Clock, Printer } from 'lucide-react';
 import { TEMAS, temaPorId } from '../datos/temas';
 import { ACTIVIDADES } from '../datos/actividades';
 import { FRASES } from '../datos/frases';
@@ -165,6 +165,9 @@ export default function Preparar({ params, perfil }) {
           <Layers size={18} /> Practicar
         </button>
       </div>
+      <button className="boton sec ancho" onClick={() => ir('material', { tema: tema.id })}>
+        <Printer size={18} /> Tarjetas, bingo y hoja de trabajo
+      </button>
       <button
         className="boton prim ancho"
         onClick={() => {

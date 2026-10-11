@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { Layers, Mic, ListChecks, RotateCcw, Check, X, Volume2, ArrowRight, Trophy } from 'lucide-react';
+import { Layers, Mic, ListChecks, RotateCcw, Check, X, Volume2, ArrowRight, Trophy, Printer } from 'lucide-react';
 import { TEMAS, temaPorId } from '../datos/temas';
 import { ir } from '../lib/ruta';
 import { usePersistente } from '../lib/almacen';
@@ -34,7 +34,7 @@ function Elegir({ tema }) {
   if (!tema) {
     return (
       <>
-        <Encabezado titulo="Practicar" sub="Elige un tema para empezar" />
+        <Encabezado titulo="Vocabulario" sub="20 temas para tus clases" volver />
         <div className="grid2">
           {TEMAS.map((t) => (
             <button key={t.id} className="tarjeta pila" style={{ gap: 8, textAlign: 'left', border: 0 }} onClick={() => ir('practicar', { tema: t.id })}>
@@ -72,6 +72,14 @@ function Elegir({ tema }) {
           </button>
         ))}
       </div>
+      <button className="tarjeta grad fila" style={{ border: 0, textAlign: 'left', color: '#fff' }} onClick={() => ir('material', { tema: tema.id })}>
+        <Printer size={26} style={{ flex: 'none' }} />
+        <span style={{ flex: 1 }}>
+          <b style={{ display: 'block' }}>Material para tu clase</b>
+          <span className="sub">Tarjetas para proyectar, bingo y hoja de trabajo</span>
+        </span>
+        <ArrowRight size={18} />
+      </button>
       <p className="seccion-titulo">Vocabulario</p>
       <div className="tarjeta" style={{ padding: 6 }}>
         {tema.palabras.map((w, i) => (
@@ -166,6 +174,9 @@ function Tarjetas({ tema }) {
         {!volteada ? (
           <>
             <span className="sub">¿Cómo se dice en inglés?</span>
+            <span style={{ fontSize: 56, lineHeight: 1 }} aria-hidden="true">
+              {actual.emoji}
+            </span>
             <span style={{ fontSize: 34, fontWeight: 600, letterSpacing: '-0.02em' }}>{actual.es}</span>
             <span className="sub" style={{ marginTop: 12 }}>
               Piénsalo y toca para ver la respuesta

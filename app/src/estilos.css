@@ -210,3 +210,44 @@ img { display: block; max-width: 100%; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* ---------- Material imprimible (bingo y hojas de trabajo) ---------- */
+.hoja-impresion { color: #111; }
+.bingo { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.carton { background: #fff; border: 2px solid var(--azul); border-radius: 16px; padding: 10px; break-inside: avoid; page-break-inside: avoid; }
+.carton-titulo { font-size: 12px; font-weight: 700; color: var(--azul); display: flex; justify-content: space-between; margin-bottom: 8px; letter-spacing: .04em; }
+.carton-titulo span { color: #888; font-weight: 500; }
+.carton-grilla { display: grid; gap: 4px; }
+.casilla { aspect-ratio: 1; border: 1.5px solid #c9cdea; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-size: 11px; font-weight: 600; line-height: 1.1; padding: 2px; overflow-wrap: anywhere; color: #0c1a5e; }
+.casilla-emoji { font-size: 24px; line-height: 1.1; }
+.casilla.libre { background: #eef0f8; color: #5b34ee; font-size: 22px; }
+.casilla.libre span { font-size: 10px; }
+
+.hoja-trabajo { background: #fff; border-radius: 16px; padding: 22px 20px; box-shadow: var(--sombra); display: flex; flex-direction: column; gap: 20px; font-size: 14px; }
+.hoja-trabajo p { color: #111; }
+.ht-cabecera { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; border-bottom: 2px solid #0c1a5e; padding-bottom: 10px; }
+.ht-titulo { font-size: 18px; font-weight: 700; color: #0c1a5e !important; margin-bottom: 6px; }
+.ht-logo { width: 44px; height: 44px; }
+.ht-consigna { font-weight: 600; margin-bottom: 10px; color: #0c1a5e !important; }
+.ht-unir { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.ht-unir ol { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 14px; }
+.ht-unir ol[type='a'] li { font-size: 16px; font-weight: 600; }
+.ht-dibujo { font-size: 30px; line-height: 1; display: inline-block; min-width: 40px; }
+.ht-completar { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+.ht-completar div { display: flex; align-items: center; gap: 10px; }
+.ht-letras { white-space: nowrap; font-size: 20px; font-weight: 600; letter-spacing: .08em; font-family: 'Courier New', monospace; }
+.ht-dibujar { height: 150px; border: 2px dashed #a9aee3; border-radius: 14px; margin-bottom: 10px; }
+.ht-pie { font-size: 11px; color: #888 !important; text-align: center; }
+
+@media print {
+  @page { size: letter; margin: 12mm; }
+  body { background: #fff !important; color: #111 !important; }
+  .tabbar, .no-imprimir, .sin-red, .toast { display: none !important; }
+  .contenido { padding: 0 !important; max-width: none !important; }
+  .hoja-trabajo { box-shadow: none; padding: 0; }
+  .bingo { gap: 8mm; }
+  .carton { border-width: 1.5px; }
+}
+.grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.girando { animation: girar 0.9s linear infinite; }
+@keyframes girar { to { transform: rotate(360deg); } }

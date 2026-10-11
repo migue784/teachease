@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { Flame, Trophy, Mic, Presentation, Check, Trash2 } from 'lucide-react';
+import { Flame, Trophy, Mic, Presentation, Check, Trash2, GraduationCap, RefreshCw } from 'lucide-react';
+import { buscarActualizacion, VERSION, COMPILADA } from '../lib/actualizar';
 import { usePersistente, borrarTodo } from '../lib/almacen';
-import { leerProgreso, racha, semana, dominadas } from '../lib/progreso';
+import { leerProgreso, racha, semana, dominadas, leccionesHechas } from '../lib/progreso';
 import { useInstalar } from '../lib/instalar';
 import { Encabezado, Robot, Logo, avisar } from '../componentes/comunes';
 import { BotonInstalar } from '../componentes/Instalar';
@@ -12,6 +13,23 @@ export default function Perfil({ perfil }) {
   usePersistente('progreso', null);
   const [, setPerfil] = usePersistente('perfil', null);
   const [confirmar, setConfirmar] = useState(false);
+  const [buscando, setBuscando] = useState(false);
+
+  const actualizar = async () => {
+    setBuscando(true);
+    try {
+      const r = await buscarActualizacion();
+      if (r === 'al-dia') avisar('Ya tienes la versión más reciente');
+      if (r === 'sin-red') avisar('Conéctate a internet para buscar actualizaciones');
+      if (r === 'actualizando') {
+        avisar('Instalando la versión nueva…');
+        return; // la app se recarga sola
+      }
+    } catch {
+      avisar('No se pudo revisar ahora. Intenta en un momento');
+    }
+    setBuscando(false);
+  };
   const { instalada } = useInstalar();
   const p = leerProgreso();
   const dias = semana(p);
@@ -19,6 +37,7 @@ export default function Perfil({ perfil }) {
   const datos = [
     { Icono: Flame, valor: racha(p), texto: 'días seguidos', color: '#FF8A3D' },
     { Icono: Trophy, valor: p.puntos, texto: 'puntos', color: 'var(--violeta)' },
+    { Icono: GraduationCap, valor: leccionesHechas(p), texto: 'lecciones de la ruta', color: 'var(--violeta)' },
     { Icono: Check, valor: dominadas(p), texto: 'palabras dominadas', color: 'var(--exito)' },
     { Icono: Mic, valor: p.pronunciadas || 0, texto: 'pronunciaciones', color: 'var(--turquesa)' },
     { Icono: Presentation, valor: p.clases || 0, texto: 'clases preparadas', color: 'var(--idea)' },
@@ -92,6 +111,17 @@ export default function Perfil({ perfil }) {
       </div>
 
       <p className="seccion-titulo">App</p>
+      <button className="tarjeta fila" style={{ border: 0, textAlign: 'left' }} onClick={actualizar} disabled={buscando}>
+        <span style={{ width: 46, height: 46, borderRadius: 14, background: 'var(--superficie-2)', display: 'grid', placeItems: 'center', flex: 'none', color: 'var(--violeta)' }}>
+          <RefreshCw size={22} className={buscando ? 'girando' : ''} />
+        </span>
+        <span style={{ flex: 1, minWidth: 0 }}>
+          <b style={{ display: 'block' }}>{buscando ? 'Buscando…' : 'Buscar actualizaciones'}</b>
+          <span className="sub">
+            Versión {VERSION} · {COMPILADA}
+          </span>
+        </span>
+      </button>
       {instalada ? (
         <p className="aviso ok">
           <Check size={18} style={{ flex: 'none' }} /> TeachEase está instalada en este dispositivo.
@@ -129,7 +159,7 @@ export default function Perfil({ perfil }) {
       <div className="pila" style={{ alignItems: 'center', gap: 6, marginTop: 10 }}>
         <Logo archivo="logo-horizontal-sin-eslogan" style={{ height: 26 }} />
         <p className="sub" style={{ fontSize: 12.5 }}>
-          Tu apoyo silencioso en el aula · versión 0.1
+          Tu apoyo silencioso en el aula · versión {VERSION}
         </p>
         <p className="sub" style={{ fontSize: 12.5 }}>
           Tus datos se guardan solo en este dispositivo.
