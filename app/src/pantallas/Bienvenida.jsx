@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { guardar } from '../lib/almacen';
 import { BotonInstalar } from '../componentes/Instalar';
+import { Logo } from '../componentes/comunes';
 
 const ROLES = ['Docente', 'Auxiliar educativo', 'Practicante', 'Otro'];
 const GRADOS = ['Preescolar', 'Primaria', 'Secundaria', 'Varios'];
@@ -30,7 +31,7 @@ export default function Bienvenida() {
     >
       {paso === 0 && (
         <div className="pila" style={{ gap: 22, textAlign: 'center', alignItems: 'center' }}>
-          <img src="marca/logo-vertical.svg" alt="TeachEase, tu apoyo silencioso en el aula" style={{ width: 'min(280px, 76vw)' }} className="robot-vivo" />
+          <Logo archivo="logo-vertical" alt="TeachEase, tu apoyo silencioso en el aula" style={{ width: 'min(280px, 76vw)' }} className="robot-vivo" />
           <p className="sub" style={{ fontSize: 16, maxWidth: 360 }}>
             Aprende y fortalece tu inglés para enseñar con confianza. Practica a tu ritmo y ten a la mano lo que necesitas decir en clase.
           </p>

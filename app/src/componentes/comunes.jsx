@@ -114,3 +114,11 @@ export const Robot = ({ tam = 56, negativo = false, vivo = true }) => (
     />
   </picture>
 );
+
+// Logo que cambia solo a su versión clara (negativo) cuando el celular está en modo oscuro
+export const Logo = ({ archivo, alt = 'TeachEase', style, className }) => (
+  <picture style={{ display: 'block' }}>
+    <source srcSet={`marca/${archivo}-negativo.svg`} media="(prefers-color-scheme: dark)" />
+    <img src={`marca/${archivo}.svg`} alt={alt} style={style} className={className} />
+  </picture>
+);

@@ -3,7 +3,7 @@ import { Flame, Trophy, Mic, Presentation, Check, Trash2 } from 'lucide-react';
 import { usePersistente, borrarTodo } from '../lib/almacen';
 import { leerProgreso, racha, semana, dominadas } from '../lib/progreso';
 import { useInstalar } from '../lib/instalar';
-import { Encabezado, Robot, avisar } from '../componentes/comunes';
+import { Encabezado, Robot, Logo, avisar } from '../componentes/comunes';
 import { BotonInstalar } from '../componentes/Instalar';
 
 const NIVEL = { basico: 'Estoy empezando', intermedio: 'Me defiendo', avanzado: 'Buen nivel' };
@@ -127,7 +127,7 @@ export default function Perfil({ perfil }) {
       )}
 
       <div className="pila" style={{ alignItems: 'center', gap: 6, marginTop: 10 }}>
-        <img src="marca/logo-horizontal-sin-eslogan.svg" alt="TeachEase" style={{ height: 26 }} />
+        <Logo archivo="logo-horizontal-sin-eslogan" style={{ height: 26 }} />
         <p className="sub" style={{ fontSize: 12.5 }}>
           Tu apoyo silencioso en el aula · versión 0.1
         </p>
