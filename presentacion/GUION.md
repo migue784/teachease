@@ -1,6 +1,6 @@
 # Guion del video de TeachEase
 
-Duración total: **3:00**. Cada escena tiene su tiempo exacto: la voz debe caber dentro de ese tiempo.
+Duración total: **2:52**. Cada escena tiene su tiempo exacto: la voz debe caber dentro de ese tiempo.
 
 ## Cómo grabar
 
@@ -39,27 +39,19 @@ Consejos: lugar sin eco (un cuarto con ropa o cortinas sirve), celular a un palm
 
 > Para eso creamos TeachEase: un aliado que te acompaña en silencio, para que enseñar deje de ser un miedo y se convierta en una oportunidad de crecer.
 
-### 0:34 – 0:42 · Lo que vas a ver
+## ¿De qué se trata?
 
-**En pantalla:** Tres tarjetas: ¿De qué se trata? · ¿Qué soluciona? · ¿Cómo funciona?
+### 0:34 – 1:00 · ¿De qué se trata?
 
-**Voz** (15 palabras, 8 s):
-
-> En los próximos minutos te contamos de qué se trata, qué soluciona y cómo funciona.
-
-## 1 · ¿De qué se trata?
-
-### 0:42 – 1:08 · ¿De qué se trata?
-
-**En pantalla:** Título de la sección y luego la app en un celular con sus tres ideas clave.
+**En pantalla:** La app en un celular y, al lado, sus ideas clave.
 
 **Voz** (55 palabras, 26 s):
 
 > TeachEase es una aplicación para docentes y auxiliares educativos que necesitan aprender y fortalecer una segunda lengua, empezando por el inglés. Se instala en el celular directamente desde el navegador, sin pasar por ninguna tienda, y sigue funcionando aunque no haya internet. Es práctica, flexible y está pensada para el día a día del aula.
 
-## 2 · ¿Qué soluciona?
+## ¿Qué soluciona?
 
-### 1:08 – 1:38 · ¿Qué soluciona?
+### 1:00 – 1:30 · ¿Qué soluciona?
 
 **En pantalla:** Comparación: "Hoy" contra "Con TeachEase". Cierra con "Menos miedo. Más confianza."
 
@@ -67,17 +59,17 @@ Consejos: lugar sin eco (un cuarto con ropa o cortinas sirve), celular a un palm
 
 > Hoy, muchos docentes deben enseñar una segunda lengua sin haber recibido la formación necesaria. Eso trae inseguridad, clases improvisadas y oportunidades laborales que se pierden. Con TeachEase, el docente llega preparado: sabe qué decir, cómo pronunciarlo y qué actividad hacer. Menos miedo. Más confianza.
 
-## 3 · ¿Cómo funciona?
+## ¿Cómo funciona?
 
-### 1:38 – 1:44 · ¿Cómo funciona?
+### 1:30 – 1:36 · ¿Cómo funciona?
 
-**En pantalla:** Título de la sección y los tres pasos: Aprende · Prepara · Enseña.
+**En pantalla:** ¿Cómo funciona? y los tres pasos: Aprende · Prepara · Enseña.
 
 **Voz** (9 palabras, 6 s):
 
 > ¿Cómo funciona? En tres pasos: aprende, prepara y enseña.
 
-### 1:44 – 2:04 · Paso 1 · Aprende
+### 1:36 – 1:56 · Paso 1 · Aprende
 
 **En pantalla:** Tres pantallas: prueba de nivel, una lección y el entrenador de pronunciación.
 
@@ -85,7 +77,7 @@ Consejos: lugar sin eco (un cuarto con ropa o cortinas sirve), celular a un palm
 
 > Primero, aprendes a tu ritmo. Una prueba corta te ubica en tu nivel y una ruta de lecciones te enseña el inglés que de verdad usas en clase. Y para la pronunciación, puedes grabar tu voz y compararla con el modelo.
 
-### 2:04 – 2:22 · Paso 2 · Prepara
+### 1:56 – 2:14 · Paso 2 · Prepara
 
 **En pantalla:** Tres pantallas: el plan de clase, el bingo y las tarjetas para proyectar.
 
@@ -93,7 +85,7 @@ Consejos: lugar sin eco (un cuarto con ropa o cortinas sirve), celular a un palm
 
 > Después, preparas tu clase en minutos. Eliges el tema y TeachEase te arma el paso a paso, con actividades, tarjetas para proyectar, bingo y hojas para imprimir.
 
-### 2:22 – 2:44 · Paso 3 · Enseña
+### 2:14 – 2:36 · Paso 3 · Enseña
 
 **En pantalla:** Tres pantallas: Modo Aula con susurro, el temporizador y el semáforo de ruido.
 
@@ -103,7 +95,7 @@ Consejos: lugar sin eco (un cuarto con ropa o cortinas sirve), celular a un palm
 
 ## Cierre
 
-### 2:44 – 3:00 · Cierre
+### 2:36 – 2:52 · Cierre
 
 **En pantalla:** Logo, eslogan, código QR para abrir la app y nombres del equipo.
 
