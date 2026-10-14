@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>TeachEase · Video de presentación</title>
+<style>
+/* Video de presentación de TeachEase (1920×1080).
+   Todo está animado con CSS sobre una sola línea de tiempo: el tiempo de inicio
+   de cada animación (--d) está en segundos desde el comienzo del video. Así el
+   video se puede "adelantar" a cualquier segundo exacto para exportarlo cuadro a cuadro.
+   ?ensayo  → muestra el guion como teleprompter y el reloj, para grabar la voz.
+   ?t=40    → empieza en el segundo 40.  Espacio: pausa · ← →: 5 s atrás/adelante. */
+@font-face{font-family:Poppins;font-weight:400;src:url(../marca/assets/fuentes/Poppins-Regular.ttf)}
+@font-face{font-family:Poppins;font-weight:500;src:url(../marca/assets/fuentes/Poppins-Medium.ttf)}
+@font-face{font-family:Poppins;font-weight:600;src:url(../marca/assets/fuentes/Poppins-SemiBold.ttf)}
+@font-face{font-family:Poppins;font-weight:700;src:url(../marca/assets/fuentes/Poppins-Bold.ttf)}
+:root{
+  --azul:#0C1A5E; --azul-2:#16257A; --turq:#3FBFB0; --turq-c:#5FD8C8; --idea:#3E5BE8;
+  --violeta:#5B34EE; --violeta-c:#8E74FF; --lavanda:#A9AEE3; --nube:#F3F5FB; --pizarra:#5C6386;
+  --deg:linear-gradient(135deg,#3FBFB0 0%,#3E5BE8 55%,#5B34EE 100%);
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#000;overflow:hidden}
+body{font-family:Poppins,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+#escenario{position:relative;width:1920px;height:1080px;overflow:hidden;background:var(--azul);transform-origin:0 0}
+img{display:block}
+
+/* ---------- Escenas ---------- */
+.escena{position:absolute;inset:0;opacity:0;animation:escena calc(var(--dur)*1s) linear calc(var(--ini)*1s) both}
+@keyframes escena{0%{opacity:0}2.5%{opacity:1}97.5%{opacity:1}100%{opacity:0}}
+.oscura{background:radial-gradient(ellipse at 70% 30%,#1B2A86 0%,#0C1A5E 55%,#0A1450 100%);color:#fff}
+.clara{background:var(--nube);color:var(--azul)}
+
+/* ---------- Movimientos ---------- */
+.aparece{animation:aparece .9s var(--ease) calc(var(--d)*1s) both}
+.pop{animation:pop .7s cubic-bezier(.3,1.6,.5,1) calc(var(--d)*1s) both}
+.izq{animation:izq .9s var(--ease) calc(var(--d)*1s) both}
+.der{animation:der .9s var(--ease) calc(var(--d)*1s) both}
+.sale{animation:aparece .9s var(--ease) calc(var(--d)*1s) both,sale .6s ease-in calc(var(--s)*1s) forwards}
+.dibuja{stroke-dasharray:1;stroke-dashoffset:1;animation:dibuja 1.6s cubic-bezier(.65,0,.35,1) calc(var(--d)*1s) forwards}
+.flota{animation:flota 5s ease-in-out infinite}
+.crece{animation:crece calc(var(--dur)*1s) linear calc(var(--ini)*1s) both}
+@keyframes aparece{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:scale(1)}}
+@keyframes izq{from{opacity:0;transform:translateX(-80px)}to{opacity:1;transform:none}}
+@keyframes der{from{opacity:0;transform:translateX(120px)}to{opacity:1;transform:none}}
+@keyframes sale{to{opacity:0;transform:translateY(-30px)}}
+@keyframes dibuja{to{stroke-dashoffset:0}}
+@keyframes flota{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes crece{from{transform:scale(1)}to{transform:scale(1.06)}}
+
+/* ---------- Piezas comunes ---------- */
+.ceja{font-size:26px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--violeta)}
+.oscura .ceja{color:var(--turq-c)}
+.titular{font-size:84px;font-weight:600;line-height:1.05;letter-spacing:-.03em}
+.grad{background:var(--deg);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tel{width:330px;border-radius:48px;background:#0F1533;padding:12px;box-shadow:0 50px 90px -40px rgba(12,26,94,.6),0 0 0 2px rgba(255,255,255,.06) inset}
+.tel img{width:100%;border-radius:36px}
+.chip{display:inline-flex;align-items:center;gap:14px;font-size:30px;font-weight:500;padding:16px 28px;border-radius:999px;background:#fff;color:var(--azul);box-shadow:0 20px 40px -24px rgba(12,26,94,.45)}
+.oscura .chip{background:rgba(255,255,255,.1);color:#fff;box-shadow:none}
+.punto{width:20px;height:20px;border-radius:50%;background:var(--deg);flex:none}
+
+/* Título de sección (01, 02, 03) */
+.portadilla{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center}
+.portadilla .num{font-size:220px;font-weight:700;line-height:1;letter-spacing:-.05em}
+.portadilla h2{font-size:96px;font-weight:600;letter-spacing:-.03em}
+
+/* ---------- Ensayo (teleprompter) ---------- */
+#ensayo{display:none;position:absolute;left:0;right:0;bottom:0;padding:26px 60px 30px;background:rgba(0,0,0,.78);color:#fff;font-size:34px;line-height:1.4;z-index:20}
+#ensayo b{color:#5FD8C8;font-weight:600}
+#ensayo small{display:block;font-size:22px;color:#bbb;margin-bottom:6px;letter-spacing:.04em}
+.modo-ensayo #ensayo{display:block}
+</style>
+</head>
+<body>
+<div id="escenario">
+
+  <!-- ================= APERTURA 0–7 ================= -->
+  <section class="escena oscura" style="--ini:0;--dur:7">
+    <svg width="1920" height="1080" style="position:absolute;inset:0" aria-hidden="true">
+      <defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#5FD8C8"/><stop offset=".55" stop-color="#6F86FF"/><stop offset="1" stop-color="#8E74FF"/></linearGradient></defs>
+      <circle cx="960" cy="430" r="300" fill="none" stroke="url(#g1)" stroke-width="6" stroke-linecap="round" pathLength="1" class="dibuja" style="--d:.2;opacity:.5" transform="rotate(-90 960 430)"/>
+      <circle cx="960" cy="430" r="370" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="2"/>
+    </svg>
+    <img src="../marca/assets/logo/isotipo-negativo.svg" alt="" class="pop" style="--d:.5;position:absolute;left:810px;top:270px;width:300px">
+    <img src="../marca/assets/logo/logotipo-negativo.svg" alt="TeachEase" class="aparece" style="--d:1.6;position:absolute;left:560px;top:640px;width:800px">
+    <p class="aparece" style="--d:2.4;position:absolute;left:0;right:0;top:830px;text-align:center;font-size:44px;color:#C9CDEA">tu apoyo <b style="color:var(--turq-c);font-weight:500">silencioso</b> en el aula</p>
+  </section>
+
+  <!-- ================= EL PROBLEMA 7–22 ================= -->
+  <section class="escena clara" style="--ini:7;--dur:15">
+    <p class="aparece" style="--d:7.6;position:absolute;left:140px;top:120px;font-size:64px;font-weight:600;letter-spacing:-.02em;max-width:820px;line-height:1.15">Mañana te toca la clase de inglés…</p>
+    <p class="aparece" style="--d:10.2;position:absolute;left:140px;top:300px;font-size:64px;font-weight:600;letter-spacing:-.02em;max-width:820px;line-height:1.15;color:var(--violeta)">…pero nadie te preparó para eso.</p>
+    <svg viewBox="0 0 640 520" width="720" class="aparece" style="--d:7.4;position:absolute;right:70px;bottom:30px" aria-hidden="true">
+      <rect x="40" y="40" width="440" height="270" rx="16" fill="#0C1A5E"/>
+      <rect x="40" y="40" width="440" height="270" rx="16" fill="none" stroke="#A9AEE3" stroke-width="8"/>
+      <text x="90" y="150" fill="#fff" font-family="Poppins" font-size="60" font-weight="500">Aa Bb Cc</text>
+      <text x="90" y="230" fill="#5FD8C8" font-family="Poppins" font-size="44">Hello, class!</text>
+      <line x1="150" y1="330" x2="380" y2="330" stroke="#A9AEE3" stroke-width="10" stroke-linecap="round"/>
+      <circle cx="120" cy="440" r="34" fill="#C9CDEA"/><path d="M70 520 Q120 470 170 520Z" fill="#C9CDEA"/>
+      <circle cx="220" cy="452" r="30" fill="#C9CDEA"/><path d="M175 520 Q220 478 265 520Z" fill="#C9CDEA"/>
+      <circle cx="320" cy="440" r="34" fill="#C9CDEA"/><path d="M270 520 Q320 470 370 520Z" fill="#C9CDEA"/>
+      <circle cx="540" cy="225" r="40" fill="#8E93D6"/><circle cx="572" cy="196" r="20" fill="#8E93D6"/>
+      <path d="M488 290 Q540 262 592 290 L612 520 L468 520 Z" fill="#8E93D6"/>
+      <path d="M500 320 L420 255" stroke="#8E93D6" stroke-width="22" stroke-linecap="round"/>
+      <path d="M420 255 L380 225" stroke="#5C6386" stroke-width="7" stroke-linecap="round"/>
+    </svg>
+    <div class="pop" style="--d:12.8;position:absolute;left:1100px;top:110px"><span class="chip">🤔 ¿Cómo se dice…?</span></div>
+    <div class="pop" style="--d:14.3;position:absolute;left:1440px;top:220px"><span class="chip">😬 ¿Y si me equivoco?</span></div>
+    <div class="pop" style="--d:15.9;position:absolute;left:140px;top:560px"><span class="chip">🙈 ¿Y si los niños se dan cuenta?</span></div>
+  </section>
+
+  <!-- ================= LA RESPUESTA 22–34 ================= -->
+  <section class="escena oscura" style="--ini:22;--dur:12">
+    <div class="flota" style="position:absolute;left:170px;top:200px;width:620px">
+      <img src="../marca/assets/logo/isotipo-negativo.svg" alt="" class="pop" style="--d:22.4;width:620px">
+    </div>
+    <p class="ceja aparece" style="--d:23.2;position:absolute;left:920px;top:250px">Para eso creamos</p>
+    <img src="../marca/assets/logo/logotipo-negativo.svg" alt="TeachEase" class="aparece" style="--d:23.6;position:absolute;left:910px;top:310px;width:820px">
+    <p class="aparece" style="--d:25.6;position:absolute;left:920px;top:540px;font-size:48px;line-height:1.35;max-width:860px;color:#E3E6F7">Un aliado que te acompaña <b class="grad" style="font-weight:600">en silencio</b>, para que enseñar deje de ser un miedo y se convierta en una <b style="color:var(--turq-c);font-weight:600">oportunidad de crecer</b>.</p>
+  </section>
+
+  <!-- ================= MAPA 34–42 ================= -->
+  <section class="escena clara" style="--ini:34;--dur:8">
+    <p class="ceja aparece" style="--d:34.3;position:absolute;left:0;right:0;top:200px;text-align:center">En este video</p>
+    <div style="position:absolute;left:150px;right:150px;top:330px;display:grid;grid-template-columns:repeat(3,1fr);gap:50px">
+      <div class="aparece" style="--d:35;background:#fff;border-radius:40px;padding:56px 44px;box-shadow:0 40px 80px -50px rgba(12,26,94,.5)">
+        <p class="grad" style="font-size:110px;font-weight:700;line-height:1">01</p>
+        <p style="font-size:50px;font-weight:600;margin-top:24px;line-height:1.15">¿De qué se trata?</p>
+      </div>
+      <div class="aparece" style="--d:35.8;background:#fff;border-radius:40px;padding:56px 44px;box-shadow:0 40px 80px -50px rgba(12,26,94,.5)">
+        <p class="grad" style="font-size:110px;font-weight:700;line-height:1">02</p>
+        <p style="font-size:50px;font-weight:600;margin-top:24px;line-height:1.15">¿Qué soluciona?</p>
+      </div>
+      <div class="aparece" style="--d:36.6;background:#fff;border-radius:40px;padding:56px 44px;box-shadow:0 40px 80px -50px rgba(12,26,94,.5)">
+        <p class="grad" style="font-size:110px;font-weight:700;line-height:1">03</p>
+        <p style="font-size:50px;font-weight:600;margin-top:24px;line-height:1.15">¿Cómo funciona?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 01 ¿DE QUÉ SE TRATA? 42–68 ================= -->
+  <section class="escena clara" style="--ini:42;--dur:26">
+    <div class="portadilla sale" style="--d:42.3;--s:46">
+      <p class="num grad">01</p><h2>¿De qué se trata?</h2>
+    </div>
+    <p class="ceja aparece" style="--d:46.6;position:absolute;left:140px;top:150px">01 · ¿De qué se trata?</p>
+    <p class="titular aparece" style="--d:47;position:absolute;left:140px;top:210px;max-width:960px">Una app que te ayuda a <span class="grad">enseñar inglés</span> con confianza</p>
+    <div style="position:absolute;left:140px;top:560px;display:flex;flex-direction:column;gap:28px">
+      <div class="izq" style="--d:49.5;display:flex;align-items:center;gap:22px;font-size:38px;font-weight:500"><span class="punto"></span>Para docentes y auxiliares educativos</div>
+      <div class="izq" style="--d:54;display:flex;align-items:center;gap:22px;font-size:38px;font-weight:500"><span class="punto"></span>Se instala desde el navegador, sin tienda</div>
+      <div class="izq" style="--d:57.5;display:flex;align-items:center;gap:22px;font-size:38px;font-weight:500"><span class="punto"></span>Funciona aunque no haya internet</div>
+      <div class="izq" style="--d:62;display:flex;align-items:center;gap:22px;font-size:38px;font-weight:500"><span class="punto"></span>Pensada para el día a día del aula</div>
+    </div>
+    <div class="der" style="--d:47.6;position:absolute;left:1300px;top:120px">
+      <div class="flota"><div class="tel" style="width:400px"><img src="capturas/inicio.png" alt=""></div></div>
+    </div>
+    <div class="pop" style="--d:55;position:absolute;left:1180px;top:860px;display:flex;gap:16px">
+      <span class="chip" style="font-size:24px;padding:12px 22px">Android</span><span class="chip" style="font-size:24px;padding:12px 22px">iPhone</span><span class="chip" style="font-size:24px;padding:12px 22px">Computador</span>
+    </div>
+  </section>
+
+  <!-- ================= 02 ¿QUÉ SOLUCIONA? 68–98 ================= -->
+  <section class="escena clara" style="--ini:68;--dur:30">
+    <div class="portadilla sale" style="--d:68.3;--s:72">
+      <p class="num grad">02</p><h2>¿Qué soluciona?</h2>
+    </div>
+    <p class="ceja aparece" style="--d:72.6;position:absolute;left:140px;top:110px">02 · ¿Qué soluciona?</p>
+    <div style="position:absolute;left:140px;right:140px;top:200px;display:grid;grid-template-columns:1fr 1fr;gap:50px">
+      <div class="aparece" style="--d:73;background:#fff;border-radius:40px;padding:48px 52px;border:3px solid #F1D6D8">
+        <p style="font-size:30px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#C0392B">Hoy</p>
+        <div style="display:flex;flex-direction:column;gap:26px;margin-top:30px;font-size:38px;font-weight:500">
+          <p class="izq" style="--d:74">😟 Enseñar sin la formación necesaria</p>
+          <p class="izq" style="--d:77.5">😬 Inseguridad al hablar</p>
+          <p class="izq" style="--d:79">📋 Clases improvisadas</p>
+          <p class="izq" style="--d:80.5">🚪 Oportunidades que se pierden</p>
+        </div>
+      </div>
+      <div class="aparece" style="--d:82.5;background:var(--azul);color:#fff;border-radius:40px;padding:48px 52px">
+        <p style="font-size:30px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--turq-c)">Con TeachEase</p>
+        <div style="display:flex;flex-direction:column;gap:26px;margin-top:30px;font-size:38px;font-weight:500">
+          <p class="der" style="--d:84">✅ Sabes qué decir</p>
+          <p class="der" style="--d:85.5">🔊 Sabes cómo pronunciarlo</p>
+          <p class="der" style="--d:87">🧩 Sabes qué actividad hacer</p>
+          <p class="der" style="--d:88.5">🚀 Llegas preparado a clase</p>
+        </div>
+      </div>
+    </div>
+    <p class="pop" style="--d:91.5;position:absolute;left:0;right:0;top:880px;text-align:center;font-size:72px;font-weight:600;letter-spacing:-.02em">Menos miedo. <span class="grad">Más confianza.</span></p>
+  </section>
+
+  <!-- ================= 03 ¿CÓMO FUNCIONA? 98–104 ================= -->
+  <section class="escena clara" style="--ini:98;--dur:6">
+    <div class="portadilla" style="justify-content:flex-start;padding-top:170px">
+      <p class="num grad aparece" style="--d:98.3">03</p>
+      <h2 class="aparece" style="--d:98.6">¿Cómo funciona?</h2>
+      <div style="display:flex;gap:30px;margin-top:60px">
+        <span class="chip pop" style="--d:100.4;font-size:40px">📚 Aprende</span>
+        <span class="chip pop" style="--d:101.1;font-size:40px">🗂️ Prepara</span>
+        <span class="chip pop" style="--d:101.8;font-size:40px">🍎 Enseña</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PASO 1 · APRENDE 104–124 ================= -->
+  <section class="escena clara" style="--ini:104;--dur:20">
+    <div style="position:absolute;left:120px;top:150px;width:700px">
+      <p class="ceja aparece" style="--d:104.3">Paso 1</p>
+      <p class="titular aparece" style="--d:104.5;margin-top:14px">Aprende <span class="grad">a tu ritmo</span></p>
+      <div style="display:flex;flex-direction:column;gap:28px;margin-top:60px;font-size:36px;font-weight:500">
+        <p class="izq" style="--d:107"><span class="punto" style="display:inline-block;vertical-align:middle;margin-right:18px"></span>Prueba de nivel en 3 minutos</p>
+        <p class="izq" style="--d:110"><span class="punto" style="display:inline-block;vertical-align:middle;margin-right:18px"></span>Ruta de 18 lecciones para el aula</p>
+        <p class="izq" style="--d:116"><span class="punto" style="display:inline-block;vertical-align:middle;margin-right:18px"></span>Grábate y compara tu pronunciación</p>
+      </div>
+    </div>
+    <div class="der" style="--d:106.5;position:absolute;left:880px;top:200px"><div class="tel" style="width:300px"><img src="capturas/diagnostico.png" alt=""></div></div>
+    <div class="der" style="--d:109.5;position:absolute;left:1220px;top:120px"><div class="tel" style="width:320px"><img src="capturas/leccion-elige.png" alt=""></div></div>
+    <div class="der" style="--d:115.5;position:absolute;left:1570px;top:200px"><div class="tel" style="width:300px"><img src="capturas/pronunciacion.png" alt=""></div></div>
+  </section>
+
+  <!-- ================= PASO 2 · PREPARA 124–142 ================= -->
+  <section class="escena clara" style="--ini:124;--dur:18">
+    <div style="position:absolute;left:120px;top:150px;width:700px">
+      <p class="ceja aparece" style="--d:124.3">Paso 2</p>
+      <p class="titular aparece" style="--d:124.5;margin-top:14px">Prepara tu clase <span class="grad">en minutos</span></p>
+      <div style="display:flex;flex-direction:column;gap:28px;margin-top:60px;font-size:36px;font-weight:500">
+        <p class="izq" style="--d:127"><span class="punto" style="display:inline-block;vertical-align:middle;margin-right:18px"></span>Eliges el tema y el grado</p>
+        <p class="izq" style="--d:129"><span class="punto" style="display:inline-block;vertical-align:middle;margin-right:18px"></span>Plan paso a paso con actividades</p>
+        <p class="izq" style="--d:132"><span class="punto" style="display:inline-block;vertical-align:middle;margin-right:18px"></span>Tarjetas, bingo y hojas para imprimir</p>
+      </div>
+    </div>
+    <div class="der" style="--d:127.5;position:absolute;left:880px;top:200px"><div class="tel" style="width:300px"><img src="capturas/preparar-pasos.png" alt=""></div></div>
+    <div class="der" style="--d:131;position:absolute;left:1220px;top:120px"><div class="tel" style="width:320px"><img src="capturas/bingo.png" alt=""></div></div>
+    <div class="der" style="--d:132.5;position:absolute;left:1570px;top:200px"><div class="tel" style="width:300px"><img src="capturas/tarjetas.png" alt=""></div></div>
+  </section>
+
+  <!-- ================= PASO 3 · ENSEÑA 142–164 ================= -->
+  <section class="escena clara" style="--ini:142;--dur:22">
+    <div style="position:absolute;left:120px;top:150px;width:700px">
+      <p class="ceja aparece" style="--d:142.3">Paso 3</p>
+      <p class="titular aparece" style="--d:142.5;margin-top:14px">Enseña <span class="grad">con confianza</span></p>
+      <div style="display:flex;flex-direction:column;gap:28px;margin-top:60px;font-size:36px;font-weight:500">
+        <p class="izq" style="--d:145.5"><span class="punto" style="display:inline-block;vertical-align:middle;margin-right:18px"></span>Modo Aula: lo que quieres decir, al instante</p>
+        <p class="izq" style="--d:151"><span class="punto" style="display:inline-block;vertical-align:middle;margin-right:18px"></span>Modo susurro: solo tú lo escuchas</p>
+        <p class="izq" style="--d:155.5"><span class="punto" style="display:inline-block;vertical-align:middle;margin-right:18px"></span>Temporizador, ruleta y semáforo de ruido</p>
+      </div>
+    </div>
+    <div class="der" style="--d:145;position:absolute;left:1220px;top:120px;z-index:2"><div class="tel" style="width:320px"><img src="capturas/aula-susurro.png" alt=""></div></div>
+    <div class="der" style="--d:155;position:absolute;left:880px;top:200px"><div class="tel" style="width:300px"><img src="capturas/temporizador.png" alt=""></div></div>
+    <div class="der" style="--d:157;position:absolute;left:1570px;top:200px"><div class="tel" style="width:300px"><img src="capturas/semaforo.png" alt=""></div></div>
+  </section>
+
+  <!-- ================= CIERRE 164–180 ================= -->
+  <section class="escena oscura" style="--ini:164;--dur:16">
+    <img src="../marca/assets/logo/logo-vertical-negativo.svg" alt="TeachEase, tu apoyo silencioso en el aula" class="pop" style="--d:164.4;position:absolute;left:180px;top:170px;width:760px">
+    <div class="aparece" style="--d:168.5;position:absolute;left:1180px;top:170px;width:560px;text-align:center">
+      <div style="background:#fff;border-radius:36px;padding:34px;display:inline-block"><img src="qr-app.svg" alt="Código QR" style="width:360px;height:360px"></div>
+      <p style="font-size:40px;font-weight:600;margin-top:26px">Pruébala hoy</p>
+      <p style="font-size:28px;color:#C9CDEA;margin-top:6px">migue784.github.io/teachease</p>
+    </div>
+    <div class="aparece" style="--d:172;position:absolute;left:0;right:0;top:860px;text-align:center">
+      <p style="font-size:24px;letter-spacing:.14em;text-transform:uppercase;color:var(--turq-c);font-weight:600">Equipo</p>
+      <p style="font-size:30px;color:#fff;margin-top:12px;line-height:1.6">Erica Isaza Osorio · Lida Andrea Araque · María José Peña · Paola Duque<br>Paola Grajales · Valentina López · Valeria Suárez Gutiérrez</p>
+    </div>
+  </section>
+
+  <div id="ensayo"><small id="ensayo-t"></small><span id="ensayo-voz"></span></div>
+</div>
+
+<script src="guion.js"></script>
+<script>
+(() => {
+  const q = new URLSearchParams(location.search);
+  const exportando = q.has('render');
+  if (q.has('ensayo')) document.body.classList.add('modo-ensayo');
+
+  // Ajusta el escenario a la ventana cuando se ve en el navegador
+  const esc = document.getElementById('escenario');
+  if (!exportando) {
+    const ajustar = () => {
+      const k = Math.min(innerWidth / 1920, innerHeight / 1080);
+      esc.style.transform = `scale(${k})`;
+    };
+    addEventListener('resize', ajustar);
+    ajustar();
+  }
+
+  const fmt = (t) => `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, '0')}`;
+  const tEl = document.getElementById('ensayo-t');
+  const vozEl = document.getElementById('ensayo-voz');
+
+  function actualizarEnsayo(t) {
+    if (!document.body.classList.contains('modo-ensayo')) return;
+    const e = GUION.find((x) => t >= x.ini && t < x.fin) || GUION[GUION.length - 1];
+    const espera = e.entra || 0;
+    tEl.textContent = `${fmt(t)} / ${fmt(DURACION)} · ${e.seccion} · ${e.titulo} (${fmt(e.ini)}–${fmt(e.fin)})`;
+    vozEl.innerHTML = t - e.ini < espera ? '<b>Espera…</b>' : e.voz;
+  }
+
+  // Mueve TODAS las animaciones al segundo t (exacto y repetible)
+  window.irA = (t) => {
+    for (const a of document.getAnimations()) {
+      a.pause();
+      a.currentTime = t * 1000;
+    }
+    actualizarEnsayo(t);
+  };
+  window.DURACION = DURACION;
+
+  if (exportando) return; // el exportador controla el tiempo
+
+  let inicio = performance.now() - (Number(q.get('t')) || 0) * 1000;
+  let pausa = null;
+  const bucle = (ahora) => {
+    const t = pausa ?? ((ahora - inicio) / 1000) % DURACION;
+    irA(t);
+    requestAnimationFrame(bucle);
+  };
+  addEventListener('keydown', (e) => {
+    const t = pausa ?? ((performance.now() - inicio) / 1000) % DURACION;
+    if (e.code === 'Space') {
+      if (pausa === null) pausa = t;
+      else { inicio = performance.now() - pausa * 1000; pausa = null; }
+    }
+    if (e.code === 'ArrowRight' || e.code === 'ArrowLeft') {
+      const n = Math.max(0, t + (e.code === 'ArrowRight' ? 5 : -5));
+      if (pausa !== null) pausa = n; else inicio = performance.now() - n * 1000;
+    }
+  });
+  document.fonts.ready.then(() => requestAnimationFrame(bucle));
+})();
+</script>
+</body>
+</html>

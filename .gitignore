@@ -2,3 +2,5 @@ node_modules/
 .DS_Store
 dist/
 .netlify/
+presentacion/salida/muestra-*.png
+presentacion/salida/render.log
