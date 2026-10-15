@@ -71,6 +71,9 @@ img{display:block}
 .ico.roja{background:#FBECEC}
 .ico.oscura{background:rgba(255,255,255,.1)}
 .linea{display:flex;align-items:center;gap:20px}
+/* Saludos del tablero: cada uno se ve 2,4 s y rotan */
+.saludo{opacity:0;animation:saludo 12s linear calc((7.6 + var(--k) * 2.4) * 1s) infinite both}
+@keyframes saludo{0%{opacity:0}3%{opacity:1}18%{opacity:1}21%{opacity:0}100%{opacity:0}}
 /* ---------- Ensayo (teleprompter) ---------- */
 #ensayo{display:none;position:absolute;left:0;right:0;bottom:0;padding:26px 60px 30px;background:rgba(0,0,0,.78);color:#fff;font-size:34px;line-height:1.4;z-index:20}
 #ensayo b{color:#5FD8C8;font-weight:600}
@@ -95,13 +98,17 @@ img{display:block}
 
   <!-- ================= EL PROBLEMA 7–22 ================= -->
   <section class="escena clara" style="--ini:7;--dur:15">
-    <p class="aparece" style="--d:7.6;position:absolute;left:140px;top:120px;font-size:64px;font-weight:600;letter-spacing:-.02em;max-width:820px;line-height:1.15">Mañana te toca la clase de inglés…</p>
+    <p class="aparece" style="--d:7.6;position:absolute;left:140px;top:120px;font-size:64px;font-weight:600;letter-spacing:-.02em;max-width:820px;line-height:1.15">Mañana te toca enseñar un idioma…</p>
     <p class="aparece" style="--d:10.2;position:absolute;left:140px;top:300px;font-size:64px;font-weight:600;letter-spacing:-.02em;max-width:820px;line-height:1.15;color:var(--violeta)">…pero nadie te preparó para eso.</p>
     <svg viewBox="0 0 640 520" width="720" class="aparece" style="--d:7.4;position:absolute;right:70px;bottom:30px" aria-hidden="true">
       <rect x="40" y="40" width="440" height="270" rx="16" fill="#0C1A5E"/>
       <rect x="40" y="40" width="440" height="270" rx="16" fill="none" stroke="#A9AEE3" stroke-width="8"/>
       <text x="90" y="150" fill="#fff" font-family="Poppins" font-size="60" font-weight="500">Aa Bb Cc</text>
-      <text x="90" y="230" fill="#5FD8C8" font-family="Poppins" font-size="44">Hello, class!</text>
+      <text class="saludo" style="--k:0" x="90" y="230" fill="#5FD8C8" font-family="Poppins" font-size="44">Hello, class!</text>
+      <text class="saludo" style="--k:1" x="90" y="230" fill="#5FD8C8" font-family="Poppins" font-size="44">Bonjour, la classe !</text>
+      <text class="saludo" style="--k:2" x="90" y="230" fill="#5FD8C8" font-family="Poppins" font-size="44">Olá, turma!</text>
+      <text class="saludo" style="--k:3" x="90" y="230" fill="#5FD8C8" font-family="Poppins" font-size="44">Hallo, Klasse!</text>
+      <text class="saludo" style="--k:4" x="90" y="230" fill="#5FD8C8" font-family="Poppins" font-size="44">Ciao, classe!</text>
       <line x1="150" y1="330" x2="380" y2="330" stroke="#A9AEE3" stroke-width="10" stroke-linecap="round"/>
       <circle cx="120" cy="440" r="34" fill="#C9CDEA"/><path d="M70 520 Q120 470 170 520Z" fill="#C9CDEA"/>
       <circle cx="220" cy="452" r="30" fill="#C9CDEA"/><path d="M175 520 Q220 478 265 520Z" fill="#C9CDEA"/>
@@ -129,8 +136,8 @@ img{display:block}
   <!-- ================= ¿DE QUÉ SE TRATA? 34–60 ================= -->
   <section class="escena clara" style="--ini:34;--dur:26">
     <p class="ceja aparece" style="--d:35.1;position:absolute;left:140px;top:150px">¿De qué se trata?</p>
-    <p class="titular aparece" style="--d:35.5;position:absolute;left:140px;top:210px;max-width:960px">Una app que te ayuda a <span class="grad">enseñar inglés</span> con confianza</p>
-    <div style="position:absolute;left:140px;top:560px;display:flex;flex-direction:column;gap:28px">
+    <p class="titular aparece" style="--d:35.5;position:absolute;left:140px;top:210px;max-width:960px">Una app que te ayuda a <span class="grad">enseñar idiomas</span> con confianza</p>
+    <div style="position:absolute;left:140px;top:500px;display:flex;flex-direction:column;gap:24px">
       <div class="izq" style="--d:38;display:flex;align-items:center;gap:22px;font-size:38px;font-weight:500"><span class="punto"></span>Para docentes y auxiliares educativos</div>
       <div class="izq" style="--d:42.5;display:flex;align-items:center;gap:22px;font-size:38px;font-weight:500"><span class="punto"></span>Se instala desde el navegador, sin tienda</div>
       <div class="izq" style="--d:46;display:flex;align-items:center;gap:22px;font-size:38px;font-weight:500"><span class="punto"></span>Funciona aunque no haya internet</div>
@@ -139,7 +146,8 @@ img{display:block}
     <div class="der" style="--d:36.1;position:absolute;left:1300px;top:120px">
       <div class="flota"><div class="tel" style="width:400px"><img src="capturas/inicio.png" alt=""></div></div>
     </div>
-    <div class="pop" style="--d:43.5;position:absolute;left:1180px;top:860px;display:flex;gap:16px">
+    <div class="pop" style="--d:39.5;position:absolute;left:140px;top:910px;display:flex;flex-wrap:wrap;gap:14px;max-width:1000px"><span class="chip" style="font-size:26px;padding:12px 24px">Inglés</span><span class="chip" style="font-size:26px;padding:12px 24px">Francés</span><span class="chip" style="font-size:26px;padding:12px 24px">Portugués</span><span class="chip" style="font-size:26px;padding:12px 24px">Alemán</span><span class="chip" style="font-size:26px;padding:12px 24px">Italiano</span><span class="chip" style="font-size:26px;padding:12px 24px">y más</span></div>
+    <div class="pop" style="--d:43.5;position:absolute;left:1180px;top:910px;display:flex;gap:16px">
       <span class="chip" style="font-size:24px;padding:12px 22px">Android</span><span class="chip" style="font-size:24px;padding:12px 22px">iPhone</span><span class="chip" style="font-size:24px;padding:12px 22px">Computador</span>
     </div>
   </section>

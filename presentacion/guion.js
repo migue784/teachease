@@ -13,8 +13,8 @@ window.GUION = [
   },
   {
     id: 'gancho', ini: 7, fin: 22, seccion: 'Introducción', titulo: 'El problema',
-    pantalla: 'Una docente frente al tablero; alrededor aparecen sus dudas.',
-    voz: 'Imagina esto: mañana te toca dar la clase de inglés… pero nadie te preparó para eso. ¿Cómo se dice? ¿Y si me equivoco? ¿Y si los niños se dan cuenta?',
+    pantalla: 'Una docente frente al tablero, que saluda en varios idiomas; alrededor aparecen sus dudas.',
+    voz: 'Imagina esto: mañana te toca enseñar inglés, francés o portugués… pero nadie te preparó para eso. ¿Cómo se dice? ¿Y si me equivoco? ¿Y si los niños se dan cuenta?',
   },
   {
     id: 'respuesta', ini: 22, fin: 34, seccion: 'Introducción', titulo: 'La respuesta',
@@ -23,8 +23,8 @@ window.GUION = [
   },
   {
     id: 'que-es', ini: 34, fin: 60, seccion: '¿De qué se trata?', titulo: '¿De qué se trata?',
-    pantalla: 'La app en un celular y, al lado, sus ideas clave.',
-    voz: 'TeachEase es una aplicación para docentes y auxiliares educativos que necesitan aprender y fortalecer una segunda lengua, empezando por el inglés. Se instala en el celular directamente desde el navegador, sin pasar por ninguna tienda, y sigue funcionando aunque no haya internet. Es práctica, flexible y está pensada para el día a día del aula.',
+    pantalla: 'La app en un celular, sus ideas clave y los idiomas que cubre.',
+    voz: 'TeachEase es una aplicación para docentes y auxiliares educativos que necesitan aprender y fortalecer una segunda lengua: inglés, francés, portugués, alemán, italiano y los demás idiomas principales. Se instala en el celular directamente desde el navegador, sin pasar por ninguna tienda, y sigue funcionando aunque no haya internet. Es práctica, flexible y está pensada para el día a día del aula.',
   },
   {
     id: 'soluciona', ini: 60, fin: 90, seccion: '¿Qué soluciona?', titulo: '¿Qué soluciona?',
@@ -39,7 +39,7 @@ window.GUION = [
   {
     id: 'aprende', ini: 96, fin: 116, seccion: '¿Cómo funciona?', titulo: 'Paso 1 · Aprende',
     pantalla: 'Tres pantallas: prueba de nivel, una lección y el entrenador de pronunciación.',
-    voz: 'Primero, aprendes a tu ritmo. Una prueba corta te ubica en tu nivel y una ruta de lecciones te enseña el inglés que de verdad usas en clase. Y para la pronunciación, puedes grabar tu voz y compararla con el modelo.',
+    voz: 'Primero, aprendes a tu ritmo. Una prueba corta te ubica en tu nivel y una ruta de lecciones te enseña el idioma que de verdad usas en clase. Y para la pronunciación, puedes grabar tu voz y compararla con el modelo.',
   },
   {
     id: 'prepara', ini: 116, fin: 134, seccion: '¿Cómo funciona?', titulo: 'Paso 2 · Prepara',
@@ -49,7 +49,7 @@ window.GUION = [
   {
     id: 'ensena', ini: 134, fin: 156, seccion: '¿Cómo funciona?', titulo: 'Paso 3 · Enseña',
     pantalla: 'Tres pantallas: Modo Aula con susurro, el temporizador y el semáforo de ruido.',
-    voz: 'Y en el aula, llega tu apoyo silencioso. En el Modo Aula escribes lo que quieres decir y la app te dice cómo se dice en inglés, incluso en voz bajita, solo para ti. Además tienes temporizador, ruleta y un semáforo que ayuda a controlar el ruido.',
+    voz: 'Y en el aula, llega tu apoyo silencioso. En el Modo Aula escribes lo que quieres decir y la app te dice cómo se dice en el idioma que enseñas, incluso en voz bajita, solo para ti. Además tienes temporizador, ruleta y un semáforo que ayuda a controlar el ruido.',
   },
   {
     id: 'cierre', ini: 156, fin: 172, seccion: 'Cierre', titulo: 'Cierre',

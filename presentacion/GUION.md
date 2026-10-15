@@ -25,11 +25,11 @@ Consejos: lugar sin eco (un cuarto con ropa o cortinas sirve), celular a un palm
 
 ### 0:07 – 0:22 · El problema
 
-**En pantalla:** Una docente frente al tablero; alrededor aparecen sus dudas.
+**En pantalla:** Una docente frente al tablero, que saluda en varios idiomas; alrededor aparecen sus dudas.
 
 **Voz** (30 palabras, 15 s):
 
-> Imagina esto: mañana te toca dar la clase de inglés… pero nadie te preparó para eso. ¿Cómo se dice? ¿Y si me equivoco? ¿Y si los niños se dan cuenta?
+> Imagina esto: mañana te toca enseñar inglés, francés o portugués… pero nadie te preparó para eso. ¿Cómo se dice? ¿Y si me equivoco? ¿Y si los niños se dan cuenta?
 
 ### 0:22 – 0:34 · La respuesta
 
@@ -43,11 +43,11 @@ Consejos: lugar sin eco (un cuarto con ropa o cortinas sirve), celular a un palm
 
 ### 0:34 – 1:00 · ¿De qué se trata?
 
-**En pantalla:** La app en un celular y, al lado, sus ideas clave.
+**En pantalla:** La app en un celular, sus ideas clave y los idiomas que cubre.
 
-**Voz** (55 palabras, 26 s):
+**Voz** (61 palabras, 26 s):
 
-> TeachEase es una aplicación para docentes y auxiliares educativos que necesitan aprender y fortalecer una segunda lengua, empezando por el inglés. Se instala en el celular directamente desde el navegador, sin pasar por ninguna tienda, y sigue funcionando aunque no haya internet. Es práctica, flexible y está pensada para el día a día del aula.
+> TeachEase es una aplicación para docentes y auxiliares educativos que necesitan aprender y fortalecer una segunda lengua: inglés, francés, portugués, alemán, italiano y los demás idiomas principales. Se instala en el celular directamente desde el navegador, sin pasar por ninguna tienda, y sigue funcionando aunque no haya internet. Es práctica, flexible y está pensada para el día a día del aula.
 
 ## ¿Qué soluciona?
 
@@ -75,7 +75,7 @@ Consejos: lugar sin eco (un cuarto con ropa o cortinas sirve), celular a un palm
 
 **Voz** (41 palabras, 20 s):
 
-> Primero, aprendes a tu ritmo. Una prueba corta te ubica en tu nivel y una ruta de lecciones te enseña el inglés que de verdad usas en clase. Y para la pronunciación, puedes grabar tu voz y compararla con el modelo.
+> Primero, aprendes a tu ritmo. Una prueba corta te ubica en tu nivel y una ruta de lecciones te enseña el idioma que de verdad usas en clase. Y para la pronunciación, puedes grabar tu voz y compararla con el modelo.
 
 ### 1:56 – 2:14 · Paso 2 · Prepara
 
@@ -89,9 +89,9 @@ Consejos: lugar sin eco (un cuarto con ropa o cortinas sirve), celular a un palm
 
 **En pantalla:** Tres pantallas: Modo Aula con susurro, el temporizador y el semáforo de ruido.
 
-**Voz** (47 palabras, 22 s):
+**Voz** (50 palabras, 22 s):
 
-> Y en el aula, llega tu apoyo silencioso. En el Modo Aula escribes lo que quieres decir y la app te dice cómo se dice en inglés, incluso en voz bajita, solo para ti. Además tienes temporizador, ruleta y un semáforo que ayuda a controlar el ruido.
+> Y en el aula, llega tu apoyo silencioso. En el Modo Aula escribes lo que quieres decir y la app te dice cómo se dice en el idioma que enseñas, incluso en voz bajita, solo para ti. Además tienes temporizador, ruleta y un semáforo que ayuda a controlar el ruido.
 
 ## Cierre
 
