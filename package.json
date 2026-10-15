@@ -11,7 +11,8 @@
     "video:capturas": "node presentacion/scripts/capturas.js",
     "video": "node presentacion/scripts/render.js",
     "video:ensayo": "node presentacion/scripts/render.js --ensayo",
-    "guion": "node presentacion/scripts/guion-md.js"
+    "guion": "node presentacion/scripts/guion-md.js",
+    "guion:pdf": "node presentacion/scripts/guion-pdf.js"
   },
   "devDependencies": {
     "opentype.js": "^1.3.4",
